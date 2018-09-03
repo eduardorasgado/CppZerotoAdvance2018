@@ -54,5 +54,12 @@ int main()
     cout << r1 << endl;
     bool r2 = (5==5) || (6!=2) && !(1==1);
     cout << r2 << endl;
+    bool r3 = false && true || false;
+    cout << r3 << endl;
+    bool r4 = (5<3) || (3>=3) || true;
+    cout << r4 << endl;
+    bool r5 = ((3<=3) && (5<5) || false);
+    cout << r5 << endl;
+
     return 0;
 }
