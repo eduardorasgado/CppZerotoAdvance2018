@@ -18,9 +18,15 @@ int main(){
         cin >> examen3;
 
         // calculo de los condicionales
+        //aprobaron el ultimo examen
+        if (examen3 > 5){
+            aprobadoUltimo++;
+        }
+        //aprobaron los tres examenes
         if (examen1 > 5 && examen1 > 5 && examen3 > 5){
             aprobadosTodos++;
         }
+        //aprobaron solo un examen
         else if (examen1 > 5 || examen2 > 5 || examen3 > 5){
             aprobaronUnExamen++;
         }
@@ -30,5 +36,6 @@ int main(){
 
     cout << "Los alumnos que aprobaron todos los examenes fueron: " << aprobadosTodos << endl;
     cout << "Los alumnos que aprobaron al menos un examen fueron: " << aprobaronUnExamen << endl;
+    cout << "Los alumnos que aprobaron el ultimo examen fueron: " << aprobadoUltimo << endl;
     return 0;
 }
