@@ -12,16 +12,15 @@ int main()
     double -> Double -> reales
     booble -> Boolean -> logicos
     */
-    int edad, varx;
-    char var2;
-    float var3;
+    int edad =  25, varx = 30;
+    char var2 = 'A';
+    float var3 = 3.14, promedioFinal = 15.9;
     double varDouble;
     bool varBool= true;
-    var2 = 'a';
     edad = 24;
 
     cout << "Tu edad es de: " << edad << " años" << endl;
 
-    cout << var2 << "\n" << varBool << endl;
+    cout << var2 << "\n" << varBool << "\n" << promedioFinal << endl;
     return 0;
 }
