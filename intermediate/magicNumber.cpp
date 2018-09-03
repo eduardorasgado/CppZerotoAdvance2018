@@ -5,10 +5,15 @@
 using namespace std;
 
 int main(){
-    int userNumber, randomNumber, minimum = 1, maximum = 100, contador = 0;
+    int userNumber, randomNumber, minimum = 1, maximum = 101, contador = 0;
 
+    // generndo el numero aleatorio
+    srand(time(NULL));
 
-    cout << randomNum << endl;
+    // acotando el numero dentro de nuestros requerimientos
+    randomNumber = minimum + rand() % (maximum +1 - minimum);
+
+    cout << randomNumber << endl;
 
     return 0;
 }
