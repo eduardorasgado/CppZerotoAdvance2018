@@ -17,7 +17,7 @@ int main()
     cout << "Ingrese el radio de sus esfera: " << endl;
     cin >> radio;
 
-    volume = (4.0/3.0) / PI * pow(radio, 3);
+    volume = (4.0/3.0) * PI * pow(radio, 3);
 
     cout << "El volumen de tu esfera es de: " << volume << endl;
 
