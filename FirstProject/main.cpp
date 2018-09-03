@@ -16,6 +16,11 @@ int main()
     \b -> retroceso
     \r -> retorno de carro
     \t -> tabulador
+
+    \b retrocede el cursor 1 solo espacio, y hay un espacio en blanco luego de la secuencia de escape que
+    reemplazará el último '!' dejando la salida con 1 solo ! como corresponde:
+
+    hola!!\b generara hola!
     */
     std::cout << "Este es mi primer programa del curso de c++\n" << "Mi nombre es Eduardo Rasgado Ruiz" << std::endl;
     // este mensaje se va a sobreponer con el segundo
