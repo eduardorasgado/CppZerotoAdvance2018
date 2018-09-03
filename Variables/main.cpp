@@ -1,3 +1,7 @@
+/*
+Author: Eduardo Rasgado Ruiz
+*/
+
 #include <iostream>
 
 using namespace std;
@@ -69,6 +73,14 @@ int main()
     cout << "Booleano: " << permitido << ", tiene: " << sizeof(bool) << " bytes" <<endl;
     cout << "Flotante: " << gravedad << ", tiene: " << sizeof(float) << " bytes" <<endl;
     cout << "Double: " << aLot << ", tiene: " << sizeof(double) << " bytes" <<endl;
+
+    /**ENTRADAS POR CONSOLA**/
+
+    int variable1;
+    cout << "Ingrese un numero: ";
+    // esta es la entrada por consola, notese el >> (operador de extraccion)
+    cin >> variable1;
+    cout << "El valor ingresado es " << variable1 << endl;
 
     return 0;
 }
