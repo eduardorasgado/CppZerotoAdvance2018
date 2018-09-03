@@ -11,7 +11,12 @@ using namespace std;
 
 int main()
 {
+    // el valor de las constantes no se pueden sobre escribir
+    const double gravity = 8.81;
+
     /**CONSTANTES**/
     cout << PI << endl;
+    cout << gravity << endl;
+
     return 0;
 }
