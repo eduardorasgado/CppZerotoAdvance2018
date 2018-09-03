@@ -3,6 +3,10 @@ archivos de cabecera
 o headers
 */
 #include <iostream>
+/*
+Author: Eduardo Rasgado Ruiz
+email: eduardo.rasgado@outlook.com
+*/
 
 int main()
 {
