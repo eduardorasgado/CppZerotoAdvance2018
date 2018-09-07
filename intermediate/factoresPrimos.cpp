@@ -15,7 +15,7 @@ int main(){
 
     do{
         if(!(userNumber % overNumber)){
-            userNumber = userNumber / overNumber;
+            userNumber /= overNumber;
             cout << overNumber << endl;
         }
         else overNumber++;
