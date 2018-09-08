@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     // buscar un elemento que resulte de la suma del resto de los elementos
     // del vector
-    int myVector[] = {1,2,3,5,11}, resultante = -9999, sumaTotal = 0;
+    int myVector[] = {1,13,3,7,2}, resultante = -9999, sumaTotal = 0;
 
     /************************************ALGORITMO**********************************************/
     // calculando la suma total del vector
