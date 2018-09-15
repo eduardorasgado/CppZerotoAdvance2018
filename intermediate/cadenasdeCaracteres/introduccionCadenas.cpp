@@ -1,6 +1,6 @@
 #include <iostream>
 // libreria estandar para cadenas de caracteres
-#include <string>
+#include <cstring>
 // #include <cstdlib>
 // #include <cstdio>
 
