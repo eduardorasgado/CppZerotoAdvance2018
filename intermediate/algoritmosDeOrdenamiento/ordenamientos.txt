@@ -1,0 +1,157 @@
+Sorting is one of the fundamental aspects of computer science.
+
+Through out the short history of computer science sorting algorithms matured in a rapid pace and from the early days computers started using sophisticated methods to sort the elements in a collection data structure.
+
+A lot of things affect our choice of using a sorting algorithm such as the number of elements, the available space, budget, the priorities in our application etc.
+
+Let’s try to see them one by one:
+
+    Selection sort
+
+Selection sort is an exception in our list. This is considered an academic sorting algorithm. Why? Because the time efficiency is always O(n^2) which is not acceptable. There is no real world usage for selection sort except passing the data structure course exam.
+
+pros:
+
+Nothing
+
+cons:
+
+Always run at O(n2) even at best case scenario
+
+Practical usage:
+
+Help students to get some credits towards their degree, nothing to be precise
+
+    Bubble sort
+
+This is the other exception in the list because bubble sort is too slow to be practical. Unless the sequence is almost sorted feasibility of bubble sort is zero and the running time is O(n^2). This is one of the three simple sorting algorithms alongside selection sort and insertion sort but like selection sort falls short of insertions sort in terms of efficiency even for small sequences.
+
+pros:
+
+Again nothing, maybe just “catchy name1”
+
+cons:
+
+With polynomial O(n2) it is too slow
+
+Practical usage:
+
+Implementing it makes for an interesting programming exercise
+
+    Insertion sort
+
+Insertion sort is definitely not the most efficient algorithm out there but its power lies in its simplicity. Since it is very easy to implement and adequately efficient for small number of elements, it is useful for small applications or trivial ones. The definition of small is vague and depends on a lot of things but a safe bet is if under 50, insertion sort is fast enough. Another situation that insertion sort is useful is when the sequence is almost sorted. Such sequences may seem like exceptions but in real world applications often you encounter almost sorted elements. The run time of insertions sort is O(n^2)at worst case scenario. So far we have another useless alternative for selection sort. But if implemented well the run time can be reduced to O(n+k). n is the number of elements and k is the number of inversions (the number of pair of elements out of order). With this new run time in mind you can see if the sequence is almost sorted (k is small) the run time can be almost linear which is a huge improvement over the polynomial n^2.
+
+pros:
+
+Easy to implement
+
+The more the sequence is ordered the closer is run time to linear time O(n)
+
+cons:
+
+Not suitable for large data sets
+
+Still polynomial at worst case
+
+Practical usage
+
+For small applications when the sequence is small (less than 50 elements)
+
+When the sequence is going to be almost sorted
+
+    Heap sort
+
+This is the first general purpose sorting algorithm we are introducing here. Heap sort runs at O(nlogn) which is optimal for comparison based sorting algorithms. Though heap sort has the same run time as quick sort and merge sort but it is usually outperformed in real world scenarios. If you are asking then why should anyone use it, the answer lies in space efficiency. Nowadays computers come with huge amount of memory, enough for many applications. Does this mean heap sort is losing its shine? No, still when writing programs for environments with limited memory, such as embedded systems or space efficiency is much more important than time efficiency. A rule of thumb is if the sequence is small enough to easily fit in main memory then heap sort is good choice.
+
+pros:
+
+Runs at O(nlogn)
+
+Can be easily implemented to be executed in place
+
+cons:
+
+Not as fast as other comparison based algorithms in large data sets
+
+It doesn’t provide stable sorting
+
+Practical usage:
+
+The natural choice for small and medium sized sequences
+
+If the main memory size is concerned heap sort is the best option
+
+    Quick sort
+
+One of the most widely used sorting algorithms in computer industry. Surprisingly quick sort has a running time of O(n^2) that makes it susceptible in real-time applications. Having a polynomial worst case scenario still quick sort usually outperforms both quick sort and merge sort (coming next). The reason behind the popularity of quick sort despite the short comings is both being fast in real world scenarios (not necessarily worst case) and the ability to be implemented as an in place algorithm.
+
+pros:
+
+Most often than not runs at O(nlogn)
+
+Quick sort is tried and true, has been used for many years in industry so you can be assured it is not going to fail you
+
+High space efficiency by executing in place
+
+cons:
+
+Polynomial worst case scenario makes it susceptible for time critical applications
+
+Provides non stable sort due to swapping of elements in partitioning step
+
+Practical usage:
+
+Best choice for general purpose and in memory sorting
+
+Used to be the standard algorithm for sorting of arrays of primitive types in Java
+
+qsort utility in C programming language is powered by quick sort
+
+    Merge sort
+
+Having a O(nlogn) worst case scenario run time makes merge sort a powerful sorting algorithm. The main drawback of this algorithm is its space inefficiency. That is in the process of sorting lots of temporary arrays have to be created and many copying of elements is involved. This doesn’t mean merge sort is not useful. When the data to be sorted is distributed across different locations like cache, main memory etc then copying data is inevitable. Merge sort mainly owes its popularity to Tim Peters who designed a variant of it which is in essence a bottom-up merge sort and is known as Tim sort.
+
+pros:
+
+Excellent choice when data is fetched from resources other than main memory
+
+Having a worst case scenario run time of O(nlogn) which is optimal
+
+Tim sort variant is really powerful
+
+cons:
+
+Lots of overhead in copying data between arrays and making new arrays
+
+Extremely difficult to implement it in place for arrays
+
+Space inefficiency
+
+Practical usage:
+
+When data is in different locations like cache, main memory, external memory etc.
+
+A multi-way merge sort variant is used in GNU sorting utility
+
+Tim sort variant is standard sorting algorithm in Python programming language since 2003
+
+Default sorting algorithm of arrays of object type in Java since version 7 onward
+
+    Special purpose sorting algorithms
+
+Though currently O(nlogn) seems like an unbreakable cap for sorting algorithms, this just holds true for general purpose sorts. If the entities to be sorted are integers, strings or d-tuples then you are not limited by the sorting algorithms above. Radix sort and Bucket sort are two of most famous special purpose sorting algorithms. their worst case scenario run time is O(f(n+r)). [0, r-1] is the range of integers and f=1 for bucket sort. All in all this means if f(n+r) is significantly below nlogn function then these methods are faster than three powerful general purpose sorting algorithms, merge sort, quick sort and heap sort.
+
+pros:
+
+They can run faster than nlogn
+
+cons:
+
+Cannot be used for every type of data
+
+Not necessarily always run faster than general purpose algorithms
+
+Practical usage:
+
+When the prerequisites of data types is met then they are the definitive choice.
