@@ -20,7 +20,10 @@ int main(){
 	for(int i = 0;i < length;i++) for(int j = 0; j < length;j++) (numeros[j] > numeros[j+1]) ? swap(numeros[j],numeros[j+1]) : (void(0));
 
 	// imprimiendo el resultado del ordenamiento
+	cout << "ascendente: " << endl;
 	for(int &numero : numeros) cout << numero << endl;
+	cout << "Descente: " << endl;
+	for (int i = length;i >= 0;i--) cout << numeros[i] << endl;
 
 	return 0;
 }
