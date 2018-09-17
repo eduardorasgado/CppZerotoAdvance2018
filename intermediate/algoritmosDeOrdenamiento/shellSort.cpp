@@ -22,7 +22,9 @@ void ordenamientoShell(int numeros[], int length){
                 // en caso de aun no estar ordenado cada grupo gap sigue siendo igual
                 gap = (sorted == 0) ? floor(gap/2) : gap, sorted = 0;
         }
+}
 
+void imprimirArray(int numeros[], int length){
 	// imprimimos en orden asc, el vector resultante
         cout << "El resultado es: " << endl; for (int i = 0;i < length;i++) cout << numeros[i] << endl;
 }
@@ -48,6 +50,7 @@ int main(){
 	cout << "-------------------------------" << endl;
 
 	ordenamientoShell(numeros, length);
+	imprimirArray(numeros, length);
 
 	return 0;
 }
