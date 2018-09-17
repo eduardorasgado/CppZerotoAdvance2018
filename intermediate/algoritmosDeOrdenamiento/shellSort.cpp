@@ -1,7 +1,15 @@
 #include <iostream>
-#include <algorithm>
+// #include <algorithm>
 #include <cmath>
+
 using namespace std;
+
+void intercambio(int &x, int &y){
+	// implementacion breve de swap
+	int aux = x;
+	x = y;
+	y = aux;
+}
 
 void ordenamientoShell(int numeros[], int length){
 	// algoritmo
@@ -10,7 +18,7 @@ void ordenamientoShell(int numeros[], int length){
         // el salto minimo debe ser uno
         while(gap >= 1){
                 // iterando en intervalos
-                for(int j = 0; j < (length-gap);j++) (numeros[j] > numeros[j+gap]) ? swap(numeros[j], numeros[j+gap]), sorted++ : 0;
+                for(int j = 0; j < (length-gap);j++) (numeros[j] > numeros[j+gap]) ? intercambio(numeros[j], numeros[j+gap]), sorted++ : 0;
                 // en caso de aun no estar ordenado cada grupo gap sigue siendo igual
                 gap = (sorted == 0) ? floor(gap/2) : gap, sorted = 0;
         }
@@ -21,6 +29,7 @@ void ordenamientoShell(int numeros[], int length){
 
 int main(){
 	// Algoritmo de ordenamiento Shell Sort
+	//  O(n log^2 n) 
 	// Pasos
 	//Se divide la lista en n/2, considerando un incremento entre los dos elementos
 	// Se clasifica cada grupo por seárado comparando las parejas de elementos y si no estan ordenados se intercambian
