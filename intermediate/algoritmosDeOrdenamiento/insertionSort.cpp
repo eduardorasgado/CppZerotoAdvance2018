@@ -37,7 +37,7 @@ int main(){
 	//	}
 	//}
 
-	// algoritmo ofuscado
+	// algoritmo ofuscado / orden ascendente
 	for(int i = 0;i < length;i++) for(int j = i;j > 0;j--) (numeros[j-1] > numeros[j]) ? swap(numeros[j-1],numeros[j]) : (void(0));
 
 	// imprimiendo el arreglo ordenado
