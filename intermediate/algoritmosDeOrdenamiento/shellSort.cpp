@@ -3,6 +3,22 @@
 #include <cmath>
 using namespace std;
 
+void ordenamientoShell(int numeros[], int length){
+	// algoritmo
+        // sorted: flag para saber si se ordenaron todos en le intervalo o no
+        int gap = length/2, sorted = 0;
+        // el salto minimo debe ser uno
+        while(gap >= 1){
+                // iterando en intervalos
+                for(int j = 0; j < (length-gap);j++) (numeros[j] > numeros[j+gap]) ? swap(numeros[j], numeros[j+gap]), sorted++ : 0;
+                // en caso de aun no estar ordenado cada grupo gap sigue siendo igual
+                gap = (sorted == 0) ? floor(gap/2) : gap, sorted = 0;
+        }
+
+	// imprimimos en orden asc, el vector resultante
+        cout << "El resultado es: " << endl; for (int i = 0;i < length;i++) cout << numeros[i] << endl;
+}
+
 int main(){
 	// Algoritmo de ordenamiento Shell Sort
 	// Pasos
@@ -22,17 +38,7 @@ int main(){
 	cout << "El arreglo es el siguiente" << endl; for (int &numero : numeros) cout << numero << endl;
 	cout << "-------------------------------" << endl;
 
-	// algoritmo
-	// sorted: flag para saber si se ordenaron todos en le intervalo o no
-	int gap = length/2, sorted = 0;
-	while(gap >= 1){
-		// iterando en intervalos
-		for(int j = 0; j < (length-gap);j++) (numeros[j] > numeros[j+gap]) ? swap(numeros[j], numeros[j+gap]), sorted++ : 0;
-		// en caso de aun no estar ordenado cada grupo gap sigue siendo igual
-		gap = (sorted == 0) ? floor(gap/2) : gap, sorted = 0;
-	}
+	ordenamientoShell(numeros, length);
 
-	// imprimimos en orden asc, el vector resultante
-	cout << "El resultado es: " << endl; for (int &numero : numeros) cout << numero << endl;
 	return 0;
 }
