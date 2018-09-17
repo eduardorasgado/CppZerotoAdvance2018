@@ -14,7 +14,7 @@ int main(){
 	// declarando el arreglo
 	int numeros[] =  {10,3,2,7,6,9,8,1,5,4};
 	// calculando la longitud de numeros
-	int length =(sizeof(numeros)/sizeof(*numeros))-1;
+	int length = (sizeof(numeros)/sizeof(*numeros))-1;
 
 	// algoritmo
 	for(int i = 0;i < length;i++) for(int j = 0; j < length;j++) (numeros[j] > numeros[j+1]) ? swap(numeros[j],numeros[j+1]) : (void(0));
