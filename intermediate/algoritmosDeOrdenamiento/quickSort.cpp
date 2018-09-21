@@ -51,10 +51,12 @@ int main()
 	// El arreglo
 	int numeros[] = {10,5,3,9,2,8,4,7,6,1,19,13,14,12,17,18,16,15,11,20,0};
 
-	//ejecutando algoritmo
+
 	int ultimo = sizeof(numeros)/sizeof(*numeros);
 	// imprimir como se mira el arreglo sin ordenar
 	showList(numeros, ultimo);
+
+	// Ejecutando el algoritmo
 	quickSortAlgorithm(numeros, 0, ultimo);
 
 	// lista ya ordenada
