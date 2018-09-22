@@ -21,7 +21,7 @@ int main()
 
 	for(int i = 0;i<N;i++)
 	{
-		cout << "===ETAPA " << i << "===" << endl;
+		cout << "===ETAPA " << i+1 << "===" << endl;
 		cout << "Horas: ", cin >> etapas[i].horas;
 		cout << "Minutos: ", cin >> etapas[i].minutos;
 		cout << "Segundos: ", cin >> etapas[i].segundos;
