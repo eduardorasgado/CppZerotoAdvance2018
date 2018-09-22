@@ -44,6 +44,7 @@ int main()
 	// flags para rellenar los arreglos creados con anterioridad sin excederse de su
 	// longitud
 	int d = 0, nd = 0;
+	// agregando a los pertenecientes a las 2 estructuras clasificadoras creadas
 	for(int i = 0; i < N;i++)
 	{
 		if(personas[i].disability == 1)
