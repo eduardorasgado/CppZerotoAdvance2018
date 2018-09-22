@@ -16,6 +16,8 @@ int main()
 {
 	cout << "Nombre del corredor: ", cin.getline(corredor1.nombre, 30, '\n');
 	cout << "Edad del corredor: ", cin >> corredor1.edad;
+	// vaciar el buffer
+	cin.ignore();
 	cout << "Genero: ", cin.getline(corredor1.sexo, 10, '\n');
 	cout << "club: ", cin.getline(corredor1.club, 30, '\n');
 
