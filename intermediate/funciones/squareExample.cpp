@@ -9,7 +9,7 @@ void al_cuadrado(TYPED numero);
 int main(int argc, char** argv)
 {
         int num1 = 5;
-        float num2 = 4.2;
+        float num2 = -4.2;
         double num3 = 14364.5556;
 
         al_cuadrado(num1);
