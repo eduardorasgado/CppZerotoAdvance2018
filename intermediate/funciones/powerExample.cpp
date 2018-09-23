@@ -27,6 +27,6 @@ void dataRequest()
 
 void funpot(int num, int potencia)
 {
-	int result = pow(num, potencia);
+	long result = pow(num, potencia);
 	cout << "El resultado es: " << result << endl;
 }
