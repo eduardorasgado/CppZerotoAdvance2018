@@ -26,8 +26,7 @@ void tiempo(int totalSeg, int& horas, int& minutos, int& segundos)
 	horas = totalSeg / 3600;
 	totalSeg %= 3600;
 	minutos = totalSeg / 60;
-	totalSeg %= 60;
-	segundos = totalSeg;
+	segundos = totalSeg % 60;
 }
 
 void showTime(int& horas, int& minutos, int& segundos)
