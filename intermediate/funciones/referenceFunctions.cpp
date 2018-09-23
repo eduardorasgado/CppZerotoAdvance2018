@@ -17,6 +17,7 @@ int main(int argc, char** argv)
 }
 
 // indicando direcciones de memoria de dichos valores
+// paso de parametros por referencia
 void newValues(int& xnum, int& ynum)
 {
 	cout << "Los valores son: " << xnum << " y " << ynum << endl;
