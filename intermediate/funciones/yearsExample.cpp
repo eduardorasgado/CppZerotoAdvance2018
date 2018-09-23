@@ -2,33 +2,33 @@
 
 using namespace std;
 
-void calc_years(int days, int&, int&, int&);
+void calc_years(int totalDays, int&, int&, int&);
 void showTime(int&, int&, int&);
 
 int main(int argc, char** argv)
 {
-	int days, years = 0, months = 0, days2 = 0;
-	cout << "Dias: ", cin >> days;
-	cout << "Los dias son: " << days << endl;
+	int totalDays, years = 0, months = 0, days = 0;
+	cout << "Dias: ", cin >> totalDays;
+	cout << "Los dias son: " << totalDays << endl;
 
-	calc_years(days, years, months, days2);
+	calc_years(totalDays, years, months, days);
 
-	showTime(years, months, days2);
+	showTime(years, months, days);
 
 	return 0;
 }
 
-void calc_years(int days, int& years, int& months, int& days2)
+void calc_years(int totalDays, int& years, int& months, int& days)
 {
 	// start date = 1/1/2000
 	// cada anio: 365 dias y mes: 30 dias
-	years = days / 365;
-	days %= 365;
-	months = days / 30;
-	days2 = days % 30;
+	years = totalDays / 365;
+	totalDays %= 365;
+	months = totalDays / 30;
+	days = totalDays % 30;
 }
 
-void showTime(int& years, int& months, int& days2)
+void showTime(int& years, int& months, int& days)
 {
-	cout << "Fecha actual: " << (days2 + 1) << "/" << (months + 1) << "/" << (2000 + years) << endl;
+	cout << "Fecha actual: " << (days + 1) << "/" << (months + 1) << "/" << (2000 + years) << endl;
 }
