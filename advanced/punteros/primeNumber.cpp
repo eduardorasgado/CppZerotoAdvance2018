@@ -25,7 +25,7 @@ void dataRequest(int& num)
     {
         cout << "Inserte su número: ", cin >> num;
         cout << endl;
-        if(num > 0) break;
+        if(num > 0) accepted = true;
     }
 }
 
