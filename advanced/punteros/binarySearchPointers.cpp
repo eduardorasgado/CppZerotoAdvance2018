@@ -28,6 +28,8 @@ int main(void)
     if (indice != -1) cout << "El número ha sido encontrado en el indice: " << indice << endl;
     else cout << "NO FUE ENCONTRADO" << endl;
 
+    // borramos la memmoria del vector
+    delete[] vector1;
     return 0;
 }
 //==========================

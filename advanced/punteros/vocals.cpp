@@ -19,6 +19,9 @@ int main()
 
 	int hm = findVowels(vowels);
 
+	// borrar la memmoria del new
+	delete[] name;
+
 	cout << "Numero de vocales en tu nombre: " << hm << endl;
 	return 0;
 }
@@ -47,7 +50,7 @@ int findVowels(char v[])
 	{
 		for(int j = 0;j < 5;j++)
 		{
-			if(name[i] == v[j])
+			if(*(name+i) == v[j])
 			{
 				howMany++;
 			}
