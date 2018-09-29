@@ -59,20 +59,20 @@ int elementFinder(int& N)
 
     cout << "the number is " << number << endl;
     for (int i = 0; i < superior; ++i) {
-        cout << vector1[i] << " ";
+        cout << *(vector1+i) << " ";
     } cout << endl;
 
     while(inferior <= superior)
     {
         mitad = (inferior + superior) / 2;
-        if (vector1[mitad] == number)
+        if (*(vector1+mitad) == number)
         {
             found = true;
             break;
         }
         // cout << "mitad: " << mitad << ", vector[]: " << vector1[mitad] << " ";
-        if(vector1[mitad] > number) superior = mitad-1;
-        if(vector1[mitad] < number) inferior = mitad+1;
+        if(*(vector1+mitad) > number) superior = mitad-1;
+        if(*(vector1+mitad) < number) inferior = mitad+1;
     }
 
     if(found == true) return mitad;
