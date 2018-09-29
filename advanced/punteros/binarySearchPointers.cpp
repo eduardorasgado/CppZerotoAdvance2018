@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -24,9 +25,8 @@ int main(void)
     createVector(N);
 
     int indice = elementFinder(N);
-    if(found == true) cout << "El número ha sido encontrado en el indice: " << indice << endl;
-    else
-        cout << "El numero no fue encontrado" << endl;
+    if (indice != -1) cout << "El número ha sido encontrado en el indice: " << indice << endl;
+    else cout << "NO FUE ENCONTRADO" << endl;
 
     return 0;
 }
@@ -50,22 +50,34 @@ void createVector(int& N)
 
 int elementFinder(int& N)
 {
-    int inferior, superior, mitad, dato;
+
+    int inferior, superior, mitad;
     superior = N-1;
     inferior = 0;
 
     int number = requestToFind();
 
+    cout << "the number is " << number << endl;
+    for (int i = 0; i < superior; ++i) {
+        cout << vector1[i] << " ";
+    } cout << endl;
+
     while(inferior <= superior)
     {
-        mitad = round(inferior + superior) / 2;
-        found = (*(vector1+mitad) == number) ? true : found;
-        if(*(vector1+mitad) > number) superior = mitad-1;
-        if(*(vector1+mitad) < number) inferior = mitad+1;
+        mitad = (inferior + superior) / 2;
+        if (vector1[mitad] == number)
+        {
+            found = true;
+            break;
+        }
+        // cout << "mitad: " << mitad << ", vector[]: " << vector1[mitad] << " ";
+        if(vector1[mitad] > number) superior = mitad-1;
+        if(vector1[mitad] < number) inferior = mitad+1;
     }
 
-    if(found == 1) return mitad;
-    return 0;
+    if(found == true) return mitad;
+    return -1;
+
 }
 
 int requestToFind()
