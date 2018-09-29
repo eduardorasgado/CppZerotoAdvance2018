@@ -6,9 +6,9 @@ using namespace std;
 
 void requestData(int&);
 void requestArray(int&);
-void quickSortAlgorithm(int numeros[], int, int);
+void quickSortAlgorithm(int *, int, int);
 void swapper(int&, int&);
-void showArray(int num_arr[], int&);
+void showArray(int&);
 
 int *num_arr;
 
@@ -20,11 +20,9 @@ int main(void)
 
     requestArray(N);
 
-    //arraySorter(N);
-
     quickSortAlgorithm(num_arr, 0, N-1);
 
-    showArray(num_arr, N);
+    showArray(N);
 
     delete[] num_arr;
 
@@ -44,7 +42,7 @@ void requestArray(int& N)
     cout << endl;
 }
 
-void quickSortAlgorithm(int numeros[], int primero, int ultimo)
+void quickSortAlgorithm(int *numeros, int primero, int ultimo)
 {
     int central = round((primero + ultimo) / 2);
     int pivote = numeros[central];
@@ -52,8 +50,8 @@ void quickSortAlgorithm(int numeros[], int primero, int ultimo)
     do
     {
         // pasando menores y mayores de lado izquierdo y derecho del pivot
-        while(numeros[i] < pivote) i++;
-        while(numeros[j] > pivote) j--;
+        while(*(numeros+i) < pivote) i++;
+        while(*(numeros+j) > pivote) j--;
         if (i <= j) swapper(numeros[i], numeros[j]), i++, j--;
     } while(i <= j);  // cuando i y j se crucen, se acaba
     // Ordenar sublista izquierda
@@ -67,13 +65,10 @@ void swapper(int &a,int &b)
     int aux = b;
     b = a;
     a = aux;
-    //a = a + b;
-    //b = a - b;
-    //a = a - b;
 }
 
-void showArray(int num_arr[], int& N)
+void showArray(int& N)
 {
-    for (int i = 0; i < N; i++) cout << num_arr[i] << " ";
+    for (int i = 0; i < N; i++) cout << *(num_arr+i) << " ";
     cout << endl;
 }
