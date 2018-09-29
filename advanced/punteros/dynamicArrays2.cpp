@@ -18,6 +18,8 @@ int main(void)
 
     showData(N);
 
+    delete[] dir_arr;
+
     return 0;
 }
 
