@@ -2,6 +2,7 @@
 
 using namespace std;
 
+// PROTOTIPOS
 void requestFirst();
 void requestSecond();
 int givemeRows();
@@ -11,7 +12,9 @@ void createMatrices();
 void assignmentDataToMatrix(int **, int, int, int);
 void assignDataBoth();
 void deleteMemory();
+void addition(int **, int**, int, int, int, int);
 void deleteMemoryAllocation(int **,int);
+
 //GLOBALES
 int **pmatrix1;
 int rows1, columns1;
@@ -25,7 +28,8 @@ int main(void)
 	requestBoth();
 	createMatrices();
 	assignDataBoth();
-
+	addition(pmatrix1, pmatrix2, rows1, rows2, columns1, columns2);
+	
 	deleteMemory();
 
 	return 0;
@@ -101,6 +105,17 @@ void deleteMemory()
 {
 	deleteMemoryAllocation(pmatrix1, rows1);
 	deleteMemoryAllocation(pmatrix2, rows2);
+}
+
+void addition(int **m1,int **m2, int rows1, int rows2, int columns1, int columns2)
+{
+	if(rows1 != rows2 || columns1 != columns2) 
+					cout << "No se puede llevar esta operación, verifique n y m" << endl;
+	else
+		for(int i = 0;i<rows1;i++) for(int j = 0;j<columns1;j++) 
+						cout << (*(*(m1+i)+j) + *(*(m2+i)+j)),
+									(j == (columns1-1)) ? cout << "\n" : cout << " ";
+	cout << endl;
 }
 
 void deleteMemoryAllocation(int **m, int r)
