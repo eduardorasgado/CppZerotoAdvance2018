@@ -13,6 +13,7 @@ struct Alumno
 // PROTOTIPOS
 int howMany();
 void requestData(Alumno *, int&);
+void mejorAlumno(Alumno *, int&);
 
 //=======================00
 int main(void)
@@ -25,6 +26,7 @@ int main(void)
 
 	requestData(pAlumnos, N);
 
+	mejorAlumno(pAlumnos, N);
 	return  0;
 }
 //===========================
@@ -44,4 +46,15 @@ void requestData(Alumno *pAlumnos, int& N)
 		cout << "Edad: ", cin >> (pAlumnos+i)->edad;
 		cout << "Promedio: ", cin >> (pAlumnos+i)->promedio;
 	}
+}
+
+void mejorAlumno(Alumno *pAlumnos, int& N)
+{
+	float bestNote = 0.0;
+	int index = 0;
+	for(int i = 0;i < N; i++)
+		if((pAlumnos+i)->promedio > bestNote) index = i, bestNote = (pAlumnos+i)->promedio;
+	// imprimiendo resultado
+	cout << "El mejor alumno es: " << (pAlumnos+index)->nombre << ", su promedio es de: " << bestNote;
+	cout << endl;
 }
