@@ -3,4 +3,4 @@ project(Introduccion)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Introduccion main.cpp Punto.h)
+add_executable(Introduccion main.cpp Punto.h Punto.cpp)
