@@ -1,5 +1,6 @@
 // Declarando una clase
 
+// REPRESENTA UN PUNTO EN EL PLANO X,Y
 class Punto
 {
     private:
