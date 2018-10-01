@@ -46,15 +46,7 @@ int findVowels(char v[])
 	int howMany = 0;
 	int length = strlen(name);
 	cout << "longitud de tu nombre: " << length << endl;
-	for(int i = 0;i < length;i++)
-	{
-		for(int j = 0;j < 5;j++)
-		{
-			if(*(name+i) == v[j])
-			{
-				howMany++;
-			}
-		}
-	}
+	for(int i = 0;i < length;i++) for(int j = 0;j < 5;j++) if(*(name+i) == v[j]) howMany++;
+
 	return howMany;
 }

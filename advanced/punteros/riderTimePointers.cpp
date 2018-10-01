@@ -21,10 +21,10 @@ int main(void)
 
 	//puntero para las etapas
 	Etapa *p_etapas = etapas;
-	
+
 	requestData(p_etapas, N);
 	totalTime(p_etapas, N);
-	
+
 	return 0;
 }
 

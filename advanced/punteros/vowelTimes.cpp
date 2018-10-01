@@ -24,6 +24,9 @@ int main()
 	stringCalculate();
 	showResults();
 
+	// liberando memmoria
+	delete[] word;
+
 	return 0;
 }
 
