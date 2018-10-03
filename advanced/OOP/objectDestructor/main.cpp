@@ -6,5 +6,12 @@ int main() {
     fido->showData();
     fido->play();
 
+    // DESTRUYENDO EL OBJETO LIBERANDO MEMORIA
+    // OBJETO DINAMICO
+    delete fido;
+
+    // para DESTRUIR objetos tipo ESTATICO:
+    //fido.~Perro();
+
     return 0;
 }
