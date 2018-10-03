@@ -16,5 +16,6 @@ int main() {
     int v = 22;
     Persona* persona2 = new Persona("RARE242535FONAKDJD04");
     persona2->Correr(v);
+
     return 0;
 }
