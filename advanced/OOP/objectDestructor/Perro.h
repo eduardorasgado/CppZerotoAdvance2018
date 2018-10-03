@@ -13,10 +13,11 @@ class Perro
 
     public:
         // CONTRUCTOR DEL OBJETO
-        Perro(string _nombre, string _raza) // constructor
+        // TAMBIEN ABARCAMOS LA AUTOREFERENCIA CON THIS
+        Perro(string nombre, string raza) // constructor
         {
-            nombre = _nombre;
-            raza = _raza;
+            this->nombre = nombre;
+            this->raza = raza;
         }
 
         // DESTRUCTOR DEL OBJETO
