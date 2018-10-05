@@ -6,8 +6,7 @@
 class Map
 {
     private:
-        int width;
-        int height;
+        int size;
         int rocks;
         int herb;
         int type;
@@ -15,14 +14,9 @@ class Map
         char **map;
 
     public:
-        Map(int width, int height, int rocks, int herb, int type, int monsters)
+        Map()
         {
-            this->width = width;
-            this->height = height;
-            this->rocks = rocks;
-            this->herb = herb;
-            this->type = type;
-            this->monsters = monsters;
+
         }
 
         ~Map()
@@ -31,4 +25,5 @@ class Map
         }
 
         void create();
+        void destroy();
 };

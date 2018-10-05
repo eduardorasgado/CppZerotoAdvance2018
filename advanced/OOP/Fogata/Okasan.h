@@ -5,16 +5,15 @@
 #include "Heroe.h"
 #include <iostream>
 
-using namespace std;
 
 class Okasan
 {
     private:
-        Hero stats;
-        string name;
+        Heroe stats;
+        std::string name;
 
     public:
-        Okasan(string name) : stats(100, true, 14, 8)
+        Okasan(std::string name) : stats(100, true, 14, 8)
         {
             this->name = name;
         }

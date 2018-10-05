@@ -4,17 +4,17 @@
 
 #include "Heroe.h"
 
-bool Hero::ifItIsAlive()
+bool Heroe::ifItIsAlive()
 {
     return this->isAlive;
 }
 
-int Hero::attack()
+int Heroe::attack()
 {
     return this->normalAttack;
 }
 
-int Hero::defense()
+int Heroe::defense()
 {
     return this->normalDefense;
 }

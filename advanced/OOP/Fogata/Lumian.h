@@ -5,17 +5,15 @@
 #include "Heroe.h"
 #include <iostream>
 
-using namespace std;
-
 // LUMIAN IS LIKE A MAGICIAN BUT WITH NATURE POWERS
 class Lumian
 {
     private:
-        Hero stats;
-        string name;
+        Heroe stats;
+        std::string name;
 
     public:
-        Lumian(string name) : stats(100, true, 12, 10)
+        Lumian(std::string name) : stats(100, true, 12, 10)
         {
             this->name = name;
         }

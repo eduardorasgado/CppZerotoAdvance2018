@@ -5,26 +5,29 @@
 #include <iostream>
 #include "Map.h"
 #include <cmath>
+#include <cstdlib>
 
 void Map::create()
 {
-    int size;
     // seed
     srand(time(0));
     // para crear el mapa de matriz
-    size = ( rand() % 50)+30;
+    this->size = ( rand() % 50)+30;
     // matriz dinamica
-    this->map = new char*[size];
+    this->map = new char*[this->size];
 
-    for (int i = 0; i < size; i++) {
-        this->map[i] = new char[size];
-    }
+    for (int i = 0; i < this->size; i++)
+        this->map[i] = new char[this->size];
 
     // Llenando el mapa
-    for (int i = 0; i < size;i++) {
-        for (int j = 0; j < size; j++) {
-            *(*(this->map+i)+j) = ' ';
-        }
-    }
+    for (int i = 0; i < this->size;i++)
+        for (int j = 0; j < this->size; j++)
+                        *(*(this->map+i)+j) = ' ';
+}
 
+void Map::destroy()
+{
+    // destruir el mapa
+    for (int i = 0; i < this->size;i++) delete[] this->map[i];
+    delete[] map;
 }

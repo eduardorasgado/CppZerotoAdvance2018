@@ -1,8 +1,11 @@
+#ifndef HEROE_H
+#define HEROE_H
+
 //
 // Created by cheetos on 4/10/18.
 //
 
-class Hero
+class Heroe
 {
     private:
         int lifePoints;
@@ -11,7 +14,7 @@ class Hero
         int normalDefense;
 
     public:
-        Hero(int lifePoints, bool isAlive, int normalAttack, int normalDefense) // CONSTRUCTOR 1
+        Heroe(int lifePoints, bool isAlive, int normalAttack, int normalDefense) // CONSTRUCTOR 1
         {
             this->lifePoints = lifePoints;
             this->isAlive = isAlive;
@@ -19,7 +22,7 @@ class Hero
             this->normalDefense =  normalDefense;
         }
 
-        ~Hero() {
+        ~Heroe() {
             // DESTRUCTOR
         }
 
@@ -27,3 +30,5 @@ class Hero
         int attack();
         int defense();
 };
+
+#endif
