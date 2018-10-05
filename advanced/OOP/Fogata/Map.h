@@ -26,4 +26,5 @@ class Map
 
         void create();
         void destroy();
+        void showMap();
 };
