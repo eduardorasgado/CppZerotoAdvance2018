@@ -18,6 +18,12 @@ int main() {
     Estatico* object3 = new Estatico();
 
     getCounter(object3);
+    getCounter(object1);
+
+    //===========================
+
+    // llamando a los metodos estaticos de una clase
+    std::cout << Estatico::sumar(5, 2) << std::endl;
     return 0;
 }
 

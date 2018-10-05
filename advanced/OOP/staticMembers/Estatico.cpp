@@ -11,3 +11,10 @@ int Estatico::getContador()
 {
     return contador;
 }
+
+// METODOS ESTATICOS: En el cpp ya no lleva la palabra clave static
+int Estatico::sumar(int n1, int n2)
+{
+    int suma = n1+n2;
+    return suma;
+}
