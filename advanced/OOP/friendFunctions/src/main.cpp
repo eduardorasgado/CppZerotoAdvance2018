@@ -14,6 +14,12 @@ int main(void)
 {
 	Personaje* pPrincipal = new Personaje(100, 90);
 	pPrincipal->mostrarDatos();
+
+	// paso por referencia de objetos
+	modifying(*pPrincipal, 30, 20);
+
+	pPrincipal->mostrarDatos();
+	
 	return 0;
 }
 
