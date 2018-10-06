@@ -1,4 +1,4 @@
-#include "Personaje.h"
+#include "Personaje.hpp"
 #include <iostream>
 
 void Personaje::mostrarDatos()

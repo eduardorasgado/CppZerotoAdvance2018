@@ -5,5 +5,5 @@ project(friendFunctions)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(friendFunctions ../src/main.cpp
-							../src/Personaje.h
+							../src/Personaje.hpp
 							../src/Personaje.cpp)

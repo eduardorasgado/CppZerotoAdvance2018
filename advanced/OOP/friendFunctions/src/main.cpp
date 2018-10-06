@@ -4,7 +4,7 @@
 * protegidos de una clase
 */
 #include <iostream>
-#include "Personaje.h"
+#include "Personaje.hpp"
 
 using namespace std;
 
