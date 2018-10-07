@@ -25,6 +25,11 @@ class Vehicle
             // DEFAULT VACIO
         }
 
+        ~Vehicle()
+        {
+            // DESTRUCTOR
+        }
+
         // STATIC METHODS
         static int indiceBarato(Vehicle *coches, int n);
 
