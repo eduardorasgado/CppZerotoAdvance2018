@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Turismo.h"
 #include "Deportivo.h"
+#include "Furgoneta.h"
 #include <cstdlib>
 
 int main() {
@@ -26,5 +27,11 @@ int main() {
 
     delete d1;
 
+    std::cout << "====VEHICULO FURGONETA(HERENCIA PROTEGIDA)====" << std::endl;
+    Furgoneta* f1 = new Furgoneta("Suburban", "Blanco", "D7000", 1200);
+    std::cout << "Carga(publico): " << f1->getCarga() << std::endl;
+    std::cout << "Color(protegido derivado): " << f1->getBaseColor() << std::endl;
+
+    delete f1;
     return 0;
 }

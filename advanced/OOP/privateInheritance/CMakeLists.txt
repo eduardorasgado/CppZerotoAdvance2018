@@ -3,4 +3,4 @@ project(privateInheritance)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(privateInheritance main.cpp Vehiculo.h Turismo.h Vehiculo.cpp Turismo.cpp Deportivo.h Deportivo.cpp)
+add_executable(privateInheritance main.cpp Vehiculo.h Turismo.h Vehiculo.cpp Turismo.cpp Deportivo.h Deportivo.cpp Furgoneta.h Furgoneta.cpp)
