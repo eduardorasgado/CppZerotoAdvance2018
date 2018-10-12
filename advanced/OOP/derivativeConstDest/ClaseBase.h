@@ -13,11 +13,14 @@ class ClaseBase
         int numero;
 
     public:
-        ClaseBase(int numero)
+        ClaseBase(int numero) : numero{numero}
         {
-            this->numero = numero;
-            std::cout << "Constructor de la clase base"
+            std::cout << "Constructor de la clase base" << std::endl;
         }
+        ~ClaseBase()
+        {
+            std::cout << "Destuctor clase base" << std::endl;
+        }  // Destructor
 };
 
 #endif //DERIVATIVECONSTDEST_CLASEBASE_H

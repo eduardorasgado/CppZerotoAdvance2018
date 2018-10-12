@@ -3,4 +3,4 @@ project(derivativeConstDest)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(derivativeConstDest main.cpp ClaseBase.h)
+add_executable(derivativeConstDest main.cpp ClaseBase.h ClaseDerivada.h)
