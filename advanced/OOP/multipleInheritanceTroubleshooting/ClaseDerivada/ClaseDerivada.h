@@ -31,6 +31,8 @@ class ClaseDerivada : public ClaseBase1, public ClaseBase2
         int getX();
         // METODO EN EL QUE ACCEDEMOS A LA X DE UNA CLASE BASE DESEADA
         int getXbase1();
+
+        int getXbase2();
 };
 
 #endif //MULTIPLEINHERITANCETROUBLESHOOTING_CLASEDERIVADA_H

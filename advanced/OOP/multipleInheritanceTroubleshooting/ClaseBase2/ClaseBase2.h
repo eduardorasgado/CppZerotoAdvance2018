@@ -14,6 +14,8 @@ class ClaseBase2
         ClaseBase2(int x) : x{x}{} // Constructor
 
         ~ClaseBase2(){}  // Destructor
+
+        int getX();
 };
 
 #endif //MULTIPLEINHERITANCETROUBLESHOOTING_CLASEBASE2_H

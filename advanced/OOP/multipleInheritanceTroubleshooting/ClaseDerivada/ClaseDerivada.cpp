@@ -10,7 +10,10 @@ int ClaseDerivada::getX()
      * constructor de la clase derivada, no hay conflictos
      * con este metodo getter
     */
-    return this->x;
+    // return this->x;
+
+    // Aplicandolo a metodos ambiguos:
+    return ClaseBase1::getX();
 }
 
 int ClaseDerivada::getXbase1()
@@ -21,5 +24,15 @@ int ClaseDerivada::getXbase1()
      * identificar los identificadores usados en distintos
      * ámbitos y eliminar la ambigüedad entre ellos.
      * */
-    //return
+    // Descartamos esto:
+    //return x;
+
+    // En su lugar usamos:
+    return ClaseBase1::x;
+}
+
+int ClaseDerivada::getXbase2()
+{
+    // Scope Resolution operator ::
+    return ClaseBase2::x;
 }
