@@ -20,6 +20,8 @@ class Avion
 
         void indicarAvion();
 
+        std::string getModelo();
+
 };
 
 #endif //MULTIPLEINHERITANCE_AVION_H

@@ -18,6 +18,8 @@ class Barco
         ~Barco(){}  // Destructor
 
         void indicarBarco();
+
+        std::string getNombre();
 };
 
 #endif //MULTIPLEINHERITANCE_BARCO_H

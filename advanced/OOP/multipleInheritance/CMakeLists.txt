@@ -3,4 +3,4 @@ project(multipleInheritance)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(multipleInheritance main.cpp Barco/Barco.h Barco/Barco.cpp Avion/Avion.h Avion/Avion.cpp)
+add_executable(multipleInheritance main.cpp Barco/Barco.h Barco/Barco.cpp Avion/Avion.h Avion/Avion.cpp Hidroavion/Hidroavion.h Hidroavion/Hidroavion.cpp)

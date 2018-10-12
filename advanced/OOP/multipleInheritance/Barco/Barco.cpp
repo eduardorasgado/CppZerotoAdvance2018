@@ -9,3 +9,8 @@ void Barco::indicarBarco()
 {
     std::cout << "Desplazamiento por agua" << std::endl;
 }
+
+std::string Barco::getNombre()
+{
+    return this->nombre;
+}

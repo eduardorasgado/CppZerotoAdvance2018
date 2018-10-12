@@ -9,3 +9,8 @@ void Avion::indicarAvion()
 {
     std::cout << "Desplazamiento por aire" << std::endl;
 }
+
+std::string Avion::getModelo()
+{
+    return this->modelo;
+}
