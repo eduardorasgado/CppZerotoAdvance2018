@@ -14,9 +14,10 @@ namespace Animals
         return dieta;
     }
 
-    void GatoDomestico::setNombreOwner(std::string name)
+    void GatoDomestico::setNombreOwner(std::string nombreOwner)
     {
-        this->nombreOwner = name;
+        // nuevo owner para el gato
+        this->nombreOwner = nombreOwner;
     }
 
     std::string GatoDomestico::getNombreOwner()
