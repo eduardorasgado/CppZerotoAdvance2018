@@ -12,8 +12,9 @@ namespace People
         return this->montoBeca;
     }
 
-    void BecadoDeporte::setMontoBeca(float montoBeca)
+    void BecadoDeporte::setMontoBeca(float per)
     {
+        float montoBeca = this->montoBeca + ((this->montoBeca * per)/100);
         this->montoBeca = montoBeca;
     }
 

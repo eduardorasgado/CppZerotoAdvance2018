@@ -17,7 +17,24 @@
 #include "Deportista/Deportista.h"
 #include "BecadoDeporte/BecadoDeporte.h"
 
+using namespace People;
+
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Alumno* alumnoJuan = new Alumno("Ingeniería Eléctrica");
+    Alumno* alumnoPedro = new Alumno("Ingeniería Mecánica");
+
+    Deportista* deporLuis = new Deportista("Mathew");
+
+    BecadoDeporte* bdAna = new BecadoDeporte("Ingeniería Electrónica", "Mathews", 2000);
+    BecadoDeporte* bdCarmen = new BecadoDeporte("Ingeniería Industrial", "Tiburcious", 1800);
+
+    alumnoJuan->mostrarDatos();
+
+    delete alumnoJuan;
+    delete alumnoPedro;
+    delete deporLuis;
+    delete bdAna;
+    delete bdCarmen;
+
     return 0;
 }
