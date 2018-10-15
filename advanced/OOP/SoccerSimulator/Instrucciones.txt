@@ -1,0 +1,24 @@
+/*
+ * Programa para simular un equipo de football soccer
+ *
+ * Persona:
+ *      nombre
+ *      apellido
+ *      edad
+ * Futbolista:
+ *      dorsal
+ *      posicion
+ * Entrenador:
+ *      estrategia
+ * Medico:
+ *       titulacion
+ *       experienceYears
+ *
+ * Menu con las sig instrucciones:
+ * a) Viaje en equipo
+ * b) Entrenamiento
+ * c) Partido de futbol
+ * d) Pñanificar el entrenamiento
+ * e) Entrevista (solo futbolistas)
+ * f) Curar lesion
+ * */
