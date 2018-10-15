@@ -19,7 +19,9 @@ namespace People
 
     void Deportista::mostrarDatos()
     {
-        std::cout << "El nombre del entrenador es:";
+        std::cout << "Nombre Alumno: " << this->nombre;
+        std::cout << std::endl;
+        std::cout << "El nombre del entrenador es: ";
         std::cout << this->nombreEntrenador;
         std::cout << std::endl;
     }

@@ -8,10 +8,13 @@ namespace People
     {
         private:
             std::string nombreEntrenador;
+            std::string nombre;
 
         public:
-            Deportista(std::string nombreEntrenador)
-            : nombreEntrenador{nombreEntrenador}{}
+            Deportista(std::string nombreEntrenador,
+                       std::string nombre)
+            : nombreEntrenador{nombreEntrenador},
+            nombre{nombre}{}
 
             ~Deportista(){ } // Destuctor
 

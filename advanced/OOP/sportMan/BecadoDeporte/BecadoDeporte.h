@@ -14,9 +14,9 @@ namespace People
         public:
             BecadoDeporte(std::string nombreCarrera,
                           std::string nombreEntrenador,
-                          float montoBeca)
-                          : Alumno(nombreCarrera),
-                          Deportista(nombreEntrenador)
+                          float montoBeca, std::string nombre)
+                          : Alumno(nombreCarrera, nombre),
+                          Deportista(nombreEntrenador, nombre)
             {
                 this->montoBeca = montoBeca;
             }

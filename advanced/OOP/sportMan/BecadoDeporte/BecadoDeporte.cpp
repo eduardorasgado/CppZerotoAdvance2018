@@ -3,6 +3,7 @@
 //
 
 #include "BecadoDeporte.h"
+
 #include <iostream>
 
 namespace People
@@ -20,9 +21,10 @@ namespace People
 
     void BecadoDeporte::mostrarDatos()
     {
-        std::cout << "Datos del becado: " << std::endl;
-        Alumno::mostrarDatos();
-        Deportista::mostrarDatos();
+        std::cout << "Datos del becado " << std::endl;
+        std::cout << "Nombre del becado: " << getNombre() << std::endl;
+        //Alumno::mostrarDatos();
+        //Deportista::mostrarDatos();
         std::cout << "Monto de la beca: ";
         std::cout << this->montoBeca << std::endl;
     }

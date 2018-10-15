@@ -20,15 +20,24 @@
 using namespace People;
 
 int main() {
-    Alumno* alumnoJuan = new Alumno("Ingeniería Eléctrica");
-    Alumno* alumnoPedro = new Alumno("Ingeniería Mecánica");
+    Alumno* alumnoJuan = new Alumno("Ingeniería Eléctrica", "Juan");
+    Alumno* alumnoPedro = new Alumno("Ingeniería Mecánica", "Pedro");
 
-    Deportista* deporLuis = new Deportista("Mathew");
+    Deportista* deporLuis = new Deportista("Mathew", "Luis");
 
-    BecadoDeporte* bdAna = new BecadoDeporte("Ingeniería Electrónica", "Mathews", 2000);
-    BecadoDeporte* bdCarmen = new BecadoDeporte("Ingeniería Industrial", "Tiburcious", 1800);
+    BecadoDeporte* bdAna = new BecadoDeporte("Ingeniería Electrónica", "Mathews", 2000, "Ana");
+    BecadoDeporte* bdCarmen = new BecadoDeporte("Ingeniería Industrial", "Tiburcious", 1800, "Carmen");
 
+    // mostrando todos los datos
     alumnoJuan->mostrarDatos();
+    std::cout << std::endl;
+    alumnoPedro->mostrarDatos();
+    std::cout << std::endl;
+    deporLuis->mostrarDatos();
+    std::cout << std::endl;
+    bdAna->mostrarDatos();
+    std::cout << std::endl;
+    bdCarmen->mostrarDatos();
 
     delete alumnoJuan;
     delete alumnoPedro;

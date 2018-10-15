@@ -19,8 +19,15 @@ namespace People
 
     void Alumno::mostrarDatos()
     {
+        std::cout << "Nombre Alumno: " << this->nombre;
+        std::cout << std::endl;
         std::cout << "Carrera del alumno: ";
         std::cout << this->nombreCarrera;
         std::cout << std::endl;
+    }
+
+    std::string Alumno::getNombre()
+    {
+        return this->nombre;
     }
 }
