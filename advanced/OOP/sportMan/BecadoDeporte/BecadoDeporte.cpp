@@ -23,8 +23,8 @@ namespace People
     {
         std::cout << "Datos del becado " << std::endl;
         std::cout << "Nombre del becado: " << getNombre() << std::endl;
-        //Alumno::mostrarDatos();
-        //Deportista::mostrarDatos();
+        std::cout << "Carrera: " << getNombreCarrera() << std::endl;
+        std::cout << "Entrenador: " << getNombreEntrenador() << std::endl;
         std::cout << "Monto de la beca: ";
         std::cout << this->montoBeca << std::endl;
     }
