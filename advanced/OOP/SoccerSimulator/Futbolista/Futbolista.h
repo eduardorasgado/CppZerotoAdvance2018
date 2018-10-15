@@ -1,14 +1,29 @@
-//
-// Created by cheetos on 14/10/18.
-//
+#pragma once
 
-#ifndef SOCCERSIMULATOR_FUTBOLISTA_H
-#define SOCCERSIMULATOR_FUTBOLISTA_H
+#include <iostream>
+#include "../Persona/Persona.h"
 
+namespace Soccer
+{
+	class Futbolista : public Persona
+	{
+		private:
+			int dorsal;
+			std::string posicion;
 
-class Futbolista {
+		public:
+			Futbolista(std::string nombre, std::string apellido,
+					int edad, int dorsal, std::string posicion)
+					: Persona(nombre, apellido, edad)
+			{
+				this->dorsal = dorsal;
+				this->posicion = posicion;
+			}
 
-};
+			~Fubolista(){ } // Destructor
 
-
-#endif //SOCCERSIMULATOR_FUTBOLISTA_H
+			// metodo exclusivo de esta clase
+			void entrevista();
+			// funciones virtuales a desarrollar
+	};
+}

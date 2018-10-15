@@ -1,14 +1,26 @@
-//
-// Created by cheetos on 14/10/18.
-//
+#pragma once
 
-#ifndef SOCCERSIMULATOR_PERSONA_H
-#define SOCCERSIMULATOR_PERSONA_H
+#include <iostream>
 
+namespace Soccer
+{
+	class Persona
+	{
+		// La clase persona es una clase abstracta
+		private:
+			std::string nombre;
+			std::string apellido;
+			int edad;
 
-class Persona {
+		public:
+			Persona(std::string nombre, std::string apellido, int edad)
+					: nombre{nombre}, apellido{apellido}, edad{edad}{}
 
-};
+			~Persona(){ } // Destructor
 
-
-#endif //SOCCERSIMULATOR_PERSONA_H
+			void viajar();
+			// funciones a desarrollar o genericos
+			virtual void partido() = 0;
+			virtual void entrenamiento() = 0;
+	};
+}

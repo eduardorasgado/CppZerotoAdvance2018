@@ -1,14 +1,29 @@
-//
-// Created by cheetos on 14/10/18.
-//
+#pragma once
 
-#ifndef SOCCERSIMULATOR_MEDICO_H
-#define SOCCERSIMULATOR_MEDICO_H
+#include <iostream>
+#include "../Persona/Persona.h"
 
+namespace Soccer
+{
+	class Medico : public Persona
+	{
+		private:
+			std::string titulacion;
+			int experienceYears;
 
-class Medico {
+		public:
+			Medico(std::string nombre, std::string apellido,
+					int edad, std::string titulacion,
+					int experienceYears)
+					: Persona(nombre, apellido, edad)
+			{
+				this->titulacion = titulacion;
+				this->experienceYears = experienceYears;
+			}
 
-};
+			// metodo propio de la clase
+			void curarLesion();
 
-
-#endif //SOCCERSIMULATOR_MEDICO_H
+			// Desarrollo de metodos vituales de Persona
+	};
+}

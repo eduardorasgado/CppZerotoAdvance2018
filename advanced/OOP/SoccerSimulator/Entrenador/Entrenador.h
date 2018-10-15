@@ -1,14 +1,25 @@
-//
-// Created by cheetos on 14/10/18.
-//
+#pragma once
 
-#ifndef SOCCERSIMULATOR_ENTRENADOR_H
-#define SOCCERSIMULATOR_ENTRENADOR_H
+#include <iostream>
+#include "../Persona/Persona.h"
 
+namespace Soccer
+{
+	class Entrenador : public Persona
+	{
+		private:
+			std::string estrategia;
 
-class Entrenador {
+		public:
+			Entrenador(std::string nombre, std::string apellido,
+						int edad, std::estrategia)
+						: Persona(nombre, apellido, edad)
+			{
+				this->estrategia = estrategia;
+			}
 
-};
-
-
-#endif //SOCCERSIMULATOR_ENTRENADOR_H
+			// metodo propio de esta clase
+			void planificarEntrenamiento();
+			// desarrollo de los metodos virtuales de Persona
+	};
+}
