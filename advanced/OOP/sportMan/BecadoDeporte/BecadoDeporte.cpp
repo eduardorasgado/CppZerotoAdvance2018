@@ -22,10 +22,15 @@ namespace People
     void BecadoDeporte::mostrarDatos()
     {
         std::cout << "Datos del becado " << std::endl;
-        std::cout << "Nombre del becado: " << getNombre() << std::endl;
+        std::cout << "Nombre del becado: " << Alumno::getNombre() << std::endl;
         std::cout << "Carrera: " << getNombreCarrera() << std::endl;
         std::cout << "Entrenador: " << getNombreEntrenador() << std::endl;
         std::cout << "Monto de la beca: ";
         std::cout << this->montoBeca << std::endl;
+    }
+
+    std::string BecadoDeporte::getNombre()
+    {
+        return Alumno::getNombre();
     }
 }

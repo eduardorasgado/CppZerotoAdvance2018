@@ -25,4 +25,9 @@ namespace People
         std::cout << this->nombreEntrenador;
         std::cout << std::endl;
     }
+
+    std::string Deportista::getNombre()
+    {
+        return this->nombre;
+    }
 }

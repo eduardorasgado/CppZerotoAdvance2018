@@ -21,6 +21,7 @@ namespace People
             //setters y getters
             void setNombreEntrenador(std::string);
             std::string getNombreEntrenador();
+            std::string getNombre();
 
             void mostrarDatos();
     };

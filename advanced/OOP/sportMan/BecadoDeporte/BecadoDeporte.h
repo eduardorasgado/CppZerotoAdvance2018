@@ -6,7 +6,7 @@
 
 namespace People
 {
-    class BecadoDeporte : public Alumno, Deportista
+    class BecadoDeporte : public Alumno, public Deportista
     {
         private:
             float montoBeca;
@@ -26,6 +26,7 @@ namespace People
             // getters y setters
             float getMontoBeca();
             void setMontoBeca(float);
+            std::string getNombre();
 
             void mostrarDatos();
     };
