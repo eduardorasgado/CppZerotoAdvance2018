@@ -1,5 +1,8 @@
 #include <iostream>
 
+// Incluimos el header de tipo plantilla de funcion
+#include "GreaterThanDiff.h"
+
 // Creando plantillas de funciones
 /*
  * Podemos ocupar:
@@ -20,6 +23,16 @@ int main() {
     std::cout << "El mayor de dos caraacteres es: " << greaterThan('d', 'f') << std::endl;
     // doubles
     std::cout << "El mayor de dos numeros es: " << greaterThan(346374754, 12532363) << std::endl;
+
+    std::cout << "---------------" << std::endl;
+    /*
+     * Resolucion para distintos tipos de datos dentro de una misma funcion
+     *
+     * La podemos ocupar ya que hemos importado el header en el inicio de nuestro archivo
+     * */
+    std::cout << "El mayor de dos datos(entero y flotante) es: " << greaterThanDiff(10, 3.5667) << std::endl;
+    std::cout << "El mayor de dos datos(double y flotante) es: " << greaterThanDiff(106666633.4, 3.5667) << std::endl;
+
     return 0;
 }
 
