@@ -158,9 +158,19 @@ void planTheGame()
 void interviewSession()
 {
     std::cout << "------Entrevista-------" << std::endl;
+    for (int i = 0; i < 2; ++i)
+    {
+        std::cout << equipo[i]->getNombre() << " " << equipo[i]->getApellido();
+        std::cout << std::endl;
+        // Downcasting de clase persona(base) a clase futbolista
+        ((Futbolista*)equipo[i])->entrevista();
+    }
 }
 
 void healingProcedure()
 {
     std::cout << "------Chequeo médico-------" << std::endl;
+    int i = (sizeof(equipo)/sizeof(*equipo)-1);
+    std::cout << "El médico " << equipo[3]->getNombre() << " está aquí." << std::endl;
+    ((Medico*)equipo[i])->curarLesion();
 }
