@@ -136,6 +136,22 @@ void teamMatch()
 void planTheGame()
 {
     std::cout << "------Planficar un juego-------" << std::endl;
+    // UPCASTING y DOWN CASTING
+    /*
+     *C++ allows that a derived class pointer (or reference) to be
+     * treated as base class pointer. This is upcasting.
+     *
+     * Downcasting is an opposite process, which consists in
+     * converting base class pointer (or reference) to derived
+     * class pointer.
+     * Upcasting and downcasting should NOT be understood as a
+     * simple casting of different data types.
+     *
+     * https://www.tutorialcup.com/cplusplus/upcasting-downcasting.htm
+     *
+     * Down casting:
+     * */
+    ((Entrenador*) equipo[2])->planificarEntrenamiento();
 
 }
 
