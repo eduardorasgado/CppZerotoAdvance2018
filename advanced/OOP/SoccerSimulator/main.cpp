@@ -1,13 +1,31 @@
 #include <iostream>
 #include <cstdlib>
 #include "Futbolista/Futbolista.h"
+#include "Entrenador/Entrenador.h"
+#include "Medico/Medico.h"
 
 using namespace Soccer;
 
 void printMenu(int&);
+void optionFinder(int&);
+void teamFlight();
+void teamTraining();
+void teamMatch();
+void planTheGame();
+void interviewSession();
+void healingProcedure();
+
+// variables globales
+// Creamos el arreglo
+Persona* equipo[4]; // Un arreglo de 4 objetos basada en la clase abstracta
 
 int main() {
-    Futbolista* f1 = new Futbolista("Teodoro", "Martz", 29, 11, "Delantero");
+    // Instanciamos los objetos
+    equipo[0] = new Futbolista("Teodoro", "Martz", 29, 11, "Delantero");
+    equipo[1] = new Futbolista("Paulo", "Perez", 24, 10, "Portero");
+    equipo[2]  = new Entrenador("Tuca", "Ferreti", 53, "Defensiva");
+    equipo[3] = new Medico("Zebino", "Sobretti", 47, "Cardiologo", 16);
+
     int option;
     // Ciclo principal del programa
     for(;;)
@@ -16,31 +34,8 @@ int main() {
         // En caso de presionar cero en el menu, salir
         if(option == 0) break;
         //f1->viajar();
-        switch(option)
-        {
-            case 1:
-                //
-                break;
-            case 2:
-                //
-                break;
-            case 3:
-                //
-                break;
-            case 4:
-                //
-                break;
-            case 5:
-                //
-                break;
-            case 6:
-                //
-                break;
-        }
+        optionFinder(option);
     }
-
-    delete f1;
-
     return 0;
 }
 
@@ -64,4 +59,77 @@ void printMenu(int& option)
         // si se escoje una opcion simplemente se sale del ciclo
         if(option >= 0 && option < 7) kg = false;
     }
+}
+
+void optionFinder(int& option)
+{
+    switch(option)
+    {
+        case 1:
+            //Vuelo
+            teamFlight();
+            std::cout << std::endl;
+            break;
+        case 2:
+            //Entrenamiento
+            teamTraining();
+            std::cout << std::endl;
+            break;
+        case 3:
+            //Partido de fut
+            teamMatch();
+            std::cout << std::endl;
+            break;
+        case 4:
+            // Planificar un partido
+            planTheGame();
+            std::cout << std::endl;
+            break;
+        case 5:
+            // Sesion de entrevista
+            interviewSession();
+            std::cout << std::endl;
+            break;
+        case 6:
+            // Chequeo medico
+            healingProcedure();
+            std::cout << std::endl;
+            break;
+    }
+}
+
+void teamFlight()
+{
+    std::cout << "------Viaje------" << std::endl;
+    for (int i = 0; i < 4; ++i)
+    {
+        std::cout << equipo[i]->getNombre() << " " << equipo[i]->getApellido();
+        std::cout << " -> ";
+        equipo[i]->viajar();
+        std::cout << std::endl;
+    }
+}
+
+void teamTraining()
+{
+    std::cout << "------Entrenamiento-------" << std::endl;
+}
+
+void teamMatch()
+{
+    std::cout << "------Partido-------" << std::endl;
+}
+void planTheGame()
+{
+    std::cout << "------Planficar un juego-------" << std::endl;
+}
+
+void interviewSession()
+{
+    std::cout << "------Entrevista-------" << std::endl;
+}
+
+void healingProcedure()
+{
+    std::cout << "------Chequeo médico-------" << std::endl;
 }
