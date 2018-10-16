@@ -21,9 +21,13 @@ namespace Soccer
 				this->experienceYears = experienceYears;
 			}
 
+			~Medico() { } // Destructor
+
 			// metodo propio de la clase
 			void curarLesion();
 
 			// Desarrollo de metodos vituales de Persona
+			void partido();
+			void entrenamiento();
 	};
 }

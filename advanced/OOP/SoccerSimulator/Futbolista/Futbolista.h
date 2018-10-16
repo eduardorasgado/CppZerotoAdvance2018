@@ -20,10 +20,12 @@ namespace Soccer
 				this->posicion = posicion;
 			}
 
-			~Fubolista(){ } // Destructor
+			~Futbolista(){ } // Destructor
 
 			// metodo exclusivo de esta clase
 			void entrevista();
 			// funciones virtuales a desarrollar
+			void partido();
+			void entrenamiento();
 	};
 }

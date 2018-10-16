@@ -13,6 +13,7 @@
  * */
 
 #include <iostream>
+#include <cstdlib>
 #include "Alumno/Alumno.h"
 #include "Deportista/Deportista.h"
 #include "BecadoDeporte/BecadoDeporte.h"

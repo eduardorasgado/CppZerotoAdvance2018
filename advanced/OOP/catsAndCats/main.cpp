@@ -15,6 +15,7 @@
  */
 
 #include <iostream>
+#include <cstdlib>
 #include "Felino/Felino.h"
 #include "GatoDomestico/GatoDomestico.h"
 
