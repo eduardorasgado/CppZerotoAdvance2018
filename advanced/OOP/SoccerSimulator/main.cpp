@@ -113,15 +113,30 @@ void teamFlight()
 void teamTraining()
 {
     std::cout << "------Entrenamiento-------" << std::endl;
+    for (int i = 0; i < 4; ++i)
+    {
+        std::cout << equipo[i]->getNombre() << " " << equipo[i]->getApellido();
+        std::cout << " -> ";
+        equipo[i]->entrenamiento();
+        std::cout << std::endl;
+    }
 }
 
 void teamMatch()
 {
     std::cout << "------Partido-------" << std::endl;
+    for (int i = 0; i < 4; ++i)
+    {
+        std::cout << equipo[i]->getNombre() << " " << equipo[i]->getApellido();
+        std::cout << " -> ";
+        equipo[i]->partido();
+        std::cout << std::endl;
+    }
 }
 void planTheGame()
 {
     std::cout << "------Planficar un juego-------" << std::endl;
+
 }
 
 void interviewSession()
