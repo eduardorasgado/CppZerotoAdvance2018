@@ -10,14 +10,14 @@ void requestData(TL*, int&);
 template <typename L>
 void showList(L* list, int N);
 
-int *listToOrder;
+float *listToOrder;
 
 int main() {
     // list of numbers
     int N;
     requestN(N);
     // creando un array o lista dinamica
-    listToOrder = new int[N];
+    listToOrder = new float[N];
 
     requestData(listToOrder, N);
     showList(listToOrder, N);
