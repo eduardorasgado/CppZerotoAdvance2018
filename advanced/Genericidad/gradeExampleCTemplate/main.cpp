@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Materia.h"
+#include <cstdlib>
 
 int main() {
     //instanciando los objetos dinamicamente
@@ -9,6 +10,9 @@ int main() {
 
     mecanismos->showNota();
     fluidos->showNota();
+    ingles->showNota();
+    //cambiando el valor de una de las notas
+    ingles->setNota('a');
     ingles->showNota();
 
     //borrando las instancias de la memoria
