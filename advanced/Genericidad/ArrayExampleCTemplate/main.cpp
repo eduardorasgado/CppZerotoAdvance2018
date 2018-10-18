@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Arreglo.h"
+#include <cstdlib>
 /*
  * TASKS:
  * agregar un nuevo elemento l arreglo
@@ -20,7 +21,7 @@ int main() {
     std::cout << "Numero de elemetos: ", std::cin >> N;
     //Intanciar el arreglo
     //comenzando con un arreglo de enteros de 5 elementos
-    Arreglo<int> *arreglo1 = new Arreglo<int>(N);
+    Arreglo<float> *arreglo1 = new Arreglo<float>(N);
     int option;
     for(;;)
     {
