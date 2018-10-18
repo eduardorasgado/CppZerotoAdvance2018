@@ -23,11 +23,11 @@ int main() {
     showList(listToOrder, N);
 
     std::cout << "----Ordering your array(up)----" << std::endl;
-    orderUpShellArray(listToOrder, N);
+    orderShellArray(listToOrder, N, 1);
     showList(listToOrder, N);
 
     std::cout << "----Ordering your array(Down)----" << std::endl;
-    orderDownShellArray(listToOrder, N);
+    orderShellArray(listToOrder, N, 0);
     showList(listToOrder, N);
 
     delete[] listToOrder;
