@@ -26,7 +26,8 @@ class Arreglo
         void agregar(T elemento)
         {
             // aumentando el indice despues de agregar el elemento
-            arreglo[this->indice++]= elemento;
+            if(this->arregloLleno()) std::cout << "El arreglo está lleno. Este elemento no será agregado" << std::endl;
+            else this->arreglo[this->indice++]= elemento;
         }
 
         bool arregloLleno()
@@ -39,7 +40,7 @@ class Arreglo
         void mostrarArreglo()
         {
             // indice debido a que el arreglo no siempre va a estar lleno
-            for (int i = 0; i < indice; ++i) std::cout << this->*(arreglo+i) << " ";
+            for (int i = 0; i < indice; ++i) std::cout << *(this->arreglo+i) << " ";
             std::cout << std::endl;
         }
 
