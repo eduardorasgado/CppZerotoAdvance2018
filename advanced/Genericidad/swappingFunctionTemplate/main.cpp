@@ -5,7 +5,7 @@ template <typename V>
 void requireValues(V&, V&);
 
 int main() {
-    int dato1, dato2;
+    float dato1, dato2;
     requireValues(dato1, dato2);
 
     swapping(dato1, dato2);
