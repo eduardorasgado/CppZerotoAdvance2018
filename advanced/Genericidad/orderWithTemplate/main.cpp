@@ -22,7 +22,13 @@ int main() {
     requestData(listToOrder, N);
     showList(listToOrder, N);
 
-    //orderShellArray(listToOrder, N);
+    std::cout << "----Ordering your array(up)----" << std::endl;
+    orderUpShellArray(listToOrder, N);
+    showList(listToOrder, N);
+
+    std::cout << "----Ordering your array(Down)----" << std::endl;
+    orderDownShellArray(listToOrder, N);
+    showList(listToOrder, N);
 
     delete[] listToOrder;
     return 0;
