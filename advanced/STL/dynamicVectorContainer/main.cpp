@@ -14,10 +14,13 @@ void poppingBack(std::vector<T>*);
 template <typename T>
 void eraseSelected(std::vector<T>*);
 
+template <typename T>
+void changeElement(std::vector<T>*);
+
 int main() {
     std::cout << "==== VECTORES DE LA STL (DINAMICOS) ====" << std::endl;
 
-    // Creando un vector dinamico del STL
+    // Creando un vector dinamicamente almacenado del STL
     std::vector<int> *myVector = new std::vector<int>;
 
     //Incluyendo valores dentro del vector
@@ -30,6 +33,10 @@ int main() {
     showingVector(myVector);
 
     eraseSelected(myVector);
+
+    showingVector(myVector);
+
+    changeElement(myVector);
 
     showingVector(myVector);
 
@@ -90,4 +97,12 @@ void eraseSelected(std::vector<T>* myVector)
      * Ejemplo: [ 5 10 1 15 20 ] -> [ 5 15 20 ]
     */
     myVector->erase(myVector->begin()+1, myVector->begin()+3);
+}
+
+template <typename T>
+void changeElement(std::vector<T>* myVector)
+{
+    std::cout << "Modificando un elemento dentro de mi vector" << std::endl;
+    //modificando un elemento dentro de mi vector
+    myVector->at(0) = 12;
 }
