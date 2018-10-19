@@ -3,4 +3,4 @@ project(dequeContainer)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(dequeContainer main.cpp)
+add_executable(dequeContainer main.cpp dequeMethods.h)
