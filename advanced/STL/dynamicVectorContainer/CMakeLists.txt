@@ -3,4 +3,4 @@ project(dynamicVectorContainer)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(dynamicVectorContainer main.cpp)
+add_executable(dynamicVectorContainer main.cpp VectorMethods.h)
