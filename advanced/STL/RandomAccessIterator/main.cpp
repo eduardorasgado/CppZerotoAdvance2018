@@ -1,5 +1,5 @@
 /*
- * Iteradored - Random Access Iterators
+ * Iteradores - Random Access Iterators
  * */
 #include <iostream>
 #include <vector>
