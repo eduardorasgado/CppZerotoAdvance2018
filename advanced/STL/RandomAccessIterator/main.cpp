@@ -18,7 +18,13 @@ int main() {
     auto f = myVector->end();
 
     // usando random access iterators para mostrar el vector
-    showingVector(i, f);
+    std::cout << "Forward showing..." << std::endl;
+    showingVector(i, f, true);
+
+    i = myVector->end()-1;
+    f = myVector->begin()-1;
+    std::cout << "Backward showing..." << std::endl;
+    showingVector(i, f, false);
 
     delete myVector;
 

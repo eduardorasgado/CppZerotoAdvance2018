@@ -4,7 +4,7 @@
 
 // declaraciones
 template <typename T>
-void showingVector(T, T);
+void showingVector(T, T, bool);
 
 template <typename T>
 void pushingElements(std::vector<T>*);
@@ -12,14 +12,16 @@ void pushingElements(std::vector<T>*);
 //Definiciones
 
 template <typename T>
-void showingVector(T inicio, T final)
+void showingVector(T inicio, T final, bool forward)
 {
     // Mostrando el vector usando iteradores de acceso aleatorio
     while(inicio != final)
     {
         std::cout << *inicio << " ";
-        inicio++;
+        if(forward) inicio++;
+        else inicio--;
     }
+    std::cout << std::endl;
 }
 
 template <typename T>
