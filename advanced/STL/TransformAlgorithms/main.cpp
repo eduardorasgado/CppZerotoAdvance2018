@@ -19,7 +19,12 @@ void messUpVector(std::vector<T>*);
 
 // funcion que usa la funcion de arriba y la aplica
 // a toddo el vector
-void upperCaseVector(std::vector<char>*);
+template <typename T>
+void upperCaseVector(std::vector<T>*);
+
+//Funcion para determinar si un aletra es una vocal
+template <typename T>
+void vowelSearchInVector(std::vector<T>*, std::vector<T>*);
 
 int main() {
     std::srand(std::time(NULL)); // seed para desordenar un vector
@@ -35,6 +40,12 @@ int main() {
     upperCaseVector(letras);
     // volviendo a mostrar el vector
     showingVectorC(letras);
+    // buscando vocales dentro del vector y copiandolas a un nuevo vector
+    std::vector<char> *vowels = new std::vector<char>;
+    vowelSearchInVector(letras, vowels);
+    // inmprimiendo el vector de vocales
+    //vowels->push_back('a');
+    showingVectorC(vowels);
 
     delete letras;
     return 0;
@@ -68,7 +79,8 @@ void messUpVector(std::vector<T> *v)
     std::random_shuffle(v->begin(), v->end());
 }
 
-void upperCaseVector(std::vector<char> *v)
+template <typename T>
+void upperCaseVector(std::vector<T> *v)
 {
     std::cout << "Minusculas a mayusculas mediante un for_each..." << std::endl;
     // usando la funcion for_each de la libreria algorithm
@@ -77,8 +89,20 @@ void upperCaseVector(std::vector<char> *v)
     // tercer argumento
     // aplicando una funcion lambda [](){}
     // ver https://thispointer.com/stdfor_each-tutorial-usage-details-with-examples/
-    std::for_each(v->begin(), v->end(), [](char &letra){
+    std::for_each(v->begin(), v->end(), [](T &letra){
         // aplicar el cambio de minuscula a mayuscula para cada letra referenciada
         if(letra >= 'a' && letra <= 'z') letra = letra - ('a' - 'A');
+    });
+}
+
+template <typename T>
+void vowelSearchInVector(std::vector<T>* v, std::vector<T>* nv)
+{
+    std::cout << "Imprimiendo solo las vocales: " << std::endl;
+    // vamos a usr una funcion lambda
+    //std::vector<char>::iterator *i = new std::vector<char>::iterator;
+    std::transform(v->begin(), v->end(), std::copy(nv->begin(), nv->end(), std::back_inserter(*nv)), [](char letra){
+        // regresa una vocal o un guion
+        return (letra =='A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U') ? letra : '-';
     });
 }
