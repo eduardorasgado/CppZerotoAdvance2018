@@ -7,6 +7,14 @@
 #include <iterator>
 #include <algorithm>
 #include <cstdlib>
+#include <numeric> // funcion accumulate
+
+// funcion para comprobar si un elemento es positivo
+template <typename T>
+bool positive(T value)
+{
+    return (value >= 0);
+}
 
 int main() {
     // creando un vector dinamico
@@ -29,6 +37,9 @@ int main() {
     // desde, hasta, funcion de lagorithm back inserter(contenedor)
     std::copy(lectura, std::istream_iterator<float>(), std::back_inserter(*numeros));
 
+    // cerrar el archivo
+    archivo.close();
+
     // imprimimos el vector
     std::cout << "El vector obtenido es: " << std::endl;
     std::ostream_iterator<float> salida(std::cout, " ");
@@ -41,6 +52,18 @@ int main() {
     // tambien es una funcion de la biblioteca algorithm
     auto minElement = std::min_element(numeros->begin(), numeros->end());
     std::cout << "\nEl minimo elemento dentro del vector es: " << *minElement << std::endl;
+
+    // calculemos el valor promedio de los elementos del vector
+    // accumulate, funcion de numeric
+    // 0.0 es para guardar la suma
+    auto sumElements = std::accumulate(numeros->begin(), numeros->end(), 0.0);
+    auto promedio = sumElements / numeros->size();
+    std::cout << "\nEl promedio de los elementos del vector es: " << promedio << std::endl;
+
+    // calcular y contar cuantos numeros positivos hay en el vector
+    // la funcion devuelve un entero
+    int totalPositive = std::count_if(numeros->begin(), numeros->end(), positive<float>);
+    std::cout << "\nLa cantidad de numeros positivos es: " << totalPositive << std::endl;
 
     delete numeros;
 
