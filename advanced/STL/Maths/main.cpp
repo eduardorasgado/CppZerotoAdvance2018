@@ -34,5 +34,15 @@ int main() {
     std::ostream_iterator<float> salida(std::cout, " ");
     std::copy(numeros->begin(), numeros->end(), salida);
 
+    // max_element es una funcion de la biblioteca algorithm
+    auto maxElement =  std::max_element(numeros->begin(), numeros->end());
+    std::cout << "\n\nEl maximo elemento del vector es: " << *maxElement << std::endl;
+
+    // tambien es una funcion de la biblioteca algorithm
+    auto minElement = std::min_element(numeros->begin(), numeros->end());
+    std::cout << "\nEl minimo elemento dentro del vector es: " << *minElement << std::endl;
+
+    delete numeros;
+
     return 0;
 }
