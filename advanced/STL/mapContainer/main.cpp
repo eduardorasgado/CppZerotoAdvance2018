@@ -11,6 +11,9 @@
 template <typename T1, typename T2>
 void addingValues(std::map<T1, T2>*);
 
+template <typename T1, typename T2>
+void showwingMap(std::map<T1, T2>*);
+
 // definimos una estructura que define un alias
 typedef std::pair<int, std::string> par;
 
@@ -22,7 +25,7 @@ int main() {
 
     //insertando elementos dentro del mapa
     addingValues(values);
-
+    showwingMap(values);
     delete values;
     return 0;
 }
@@ -43,4 +46,20 @@ void addingValues(std::map<T1, T2>* values)
         // Usando el typedef definido antes del main:
         values->insert(par(i, word));
     }
+}
+
+template <typename T1, typename T2>
+void showwingMap(std::map<T1, T2>* values)
+{
+    std::cout << "--Mostrando los elementos del mapa--" << std::endl;
+    // mostrando los elementos del mapa
+    std::map<int, std::string>::iterator i;
+    // le pasamos el iterador al ciclo for
+    // con el iterador no podemos comparar con < o > debemos usar !=
+    for (i = values->begin(); i != values->end(); ++i)
+    {
+        //
+        std::cout << "Key: " << i->first << " | Value: " << i->second << std::endl;
+    }
+    std::cout << std::endl;
 }
