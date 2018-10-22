@@ -17,6 +17,11 @@ void showwingMap(std::map<T1, T2>*);
 template <typename T1, typename T2>
 void updateValue(std::map<T1, T2>*);
 
+template <typename T1, typename T2>
+void insertingNewData(std::map<T1, T2>*);
+
+template <typename T1, typename T2>
+void searchElement(std::map<T1, T2>*);
 // definimos una estructura que define un alias
 typedef std::pair<int, std::string> par;
 
@@ -33,6 +38,10 @@ int main() {
     // actualizar o modificar un valoe de una clave
     updateValue(values);
     showwingMap(values);
+    //
+    insertingNewData(values);
+    showwingMap(values);
+    searchElement(values);
 
     delete values;
     return 0;
@@ -90,4 +99,35 @@ void updateValue(std::map<T1, T2>* values)
     values->at(key) = word;
 
     std::cout << std::endl;
+}
+
+template <typename T1, typename T2>
+void insertingNewData(std::map<T1, T2>* values)
+{
+    int nKey;
+    std::string value;
+    std::cout << "--Insertar nueva data al mapa--" << std::endl;
+    // mostrar al usuario lo que se tiene
+    std::cout << "Llaves existentes: ";
+    std::map<int, std::string>::iterator i;
+    for (i = values->begin(); i != values->end(); ++i) std::cout << i->first << " ";
+    std::cout << std::endl;
+
+    // ingresando el nuevo valor
+    std::cout << "Nueva clave: ", std::cin >> nKey;
+    std::cout << "Ingresa tu valor: ", std::cin >> value;
+    values->insert(std::pair<int, std::string>(nKey, value));
+}
+
+template <typename T1, typename T2>
+void searchElement(std::map<T1, T2>* values)
+{
+    int N;
+    std::cout << "Elemento a buscar por clave: ", std::cin >> N;
+
+    // buscando un elemento dentro del map
+    std::map<int, std::string>::iterator i;
+    i = values->find(N);
+    if (i != values->end()) std::cout << "[" << i->first << "]: " << i->second << std::endl;
+    else std::cout << "El valor no fue encontrado." << std::endl;
 }
