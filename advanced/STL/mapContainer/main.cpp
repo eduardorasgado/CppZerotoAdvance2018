@@ -22,6 +22,10 @@ void insertingNewData(std::map<T1, T2>*);
 
 template <typename T1, typename T2>
 void searchElement(std::map<T1, T2>*);
+
+template <typename T1, typename T2>
+void deleteElement(std::map<T1, T2>*);
+
 // definimos una estructura que define un alias
 typedef std::pair<int, std::string> par;
 
@@ -41,7 +45,11 @@ int main() {
     //
     insertingNewData(values);
     showwingMap(values);
+
     searchElement(values);
+
+    deleteElement(values);
+    showwingMap(values);
 
     delete values;
     return 0;
@@ -130,4 +138,14 @@ void searchElement(std::map<T1, T2>* values)
     i = values->find(N);
     if (i != values->end()) std::cout << "[" << i->first << "]: " << i->second << std::endl;
     else std::cout << "El valor no fue encontrado." << std::endl;
+}
+
+template <typename T1, typename T2>
+void deleteElement(std::map<T1, T2>* values)
+{
+    // Eliminando un elemento especifico en el map
+    int key;
+    std::cout << "Insertar la clave del elemento a eliminar: ", std::cin >> key;
+    // eliminando un elemento del mapa
+    values->erase(key);
 }
