@@ -14,6 +14,9 @@ void addingValues(std::map<T1, T2>*);
 template <typename T1, typename T2>
 void showwingMap(std::map<T1, T2>*);
 
+template <typename T1, typename T2>
+void updateValue(std::map<T1, T2>*);
+
 // definimos una estructura que define un alias
 typedef std::pair<int, std::string> par;
 
@@ -24,8 +27,13 @@ int main() {
     std::map<int, std::string> *values = new std::map<int, std::string>;
 
     //insertando elementos dentro del mapa
+    // OJO: No podemos insertar claves duplicadas
     addingValues(values);
     showwingMap(values);
+    // actualizar o modificar un valoe de una clave
+    updateValue(values);
+    showwingMap(values);
+
     delete values;
     return 0;
 }
@@ -61,5 +69,25 @@ void showwingMap(std::map<T1, T2>* values)
         //
         std::cout << "Key: " << i->first << " | Value: " << i->second << std::endl;
     }
+    std::cout << std::endl;
+}
+
+template <typename T1, typename T2>
+void updateValue(std::map<T1, T2>* values)
+{
+    // modificando el valor de un elementro dentro del map
+    T1 key;
+    T2 word = "";
+    std::cout << "Insertar la clave del valor a modificar: ", std::cin >> key;
+
+    // en el map creado dinamicamente accedemos al valor de una clave deseada con map->at(key)
+    std::cout << "Mostrando el valor de la clave a modificar: " << values->at(key) << std::endl;
+
+    // pedirle al usuario el nuevo valor del elemento del map
+    std::cout << "Insertar el nuevo valor de la clave: ", std::cin >> word;
+
+    // insertando el nuevo valor de la clave deseada dentro del map
+    values->at(key) = word;
+
     std::cout << std::endl;
 }
