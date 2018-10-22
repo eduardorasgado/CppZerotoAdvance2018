@@ -3,4 +3,4 @@ project(setContainer)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(setContainer main.cpp)
+add_executable(setContainer main.cpp SetOperations.h)
