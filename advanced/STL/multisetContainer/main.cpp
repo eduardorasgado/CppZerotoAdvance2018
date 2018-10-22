@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <iterator>
 #include <ctime>
+#include <cstdlib>
 
 template <typename T>
 void addingValues(std::multiset<T>*);

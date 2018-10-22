@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <set> // para poder usar los sets y multisets
 #include <ctime>
+#include <cstdlib>
 #include "SetOperations.h"
 
 int main() {

@@ -7,6 +7,7 @@
 #include <iostream>
 #include <iterator>
 #include <map> // para poder usar el map y multimap
+#include <cstdlib>
 
 template <typename T1, typename T2>
 void addingValues(std::map<T1, T2>*);
