@@ -15,6 +15,9 @@ void insertingValues(std::multimap<T1, T2>*);
 template <typename T1, typename T2>
 void showingMultiMap(std::multimap<T1, T2>*);
 
+template <typename T1, typename T2>
+void countMultiElement(std::multimap<T1, T2>*);
+
 // creando un alias de valor
 typedef std::pair<char, std::string> par;
 
@@ -25,7 +28,7 @@ int main() {
     //insertar valores
     insertingValues(valores);
     showingMultiMap(valores);
-
+    countMultiElement(valores);
 
     // eliminando el multimap de la mememoria antes de terminar el programa
     delete valores;
@@ -57,4 +60,25 @@ void showingMultiMap(std::multimap<T1, T2>* valores)
     // imprimiendo las claves y los valores de un multiset con un iterador
     std::multimap<char, std::string>::iterator i;
     for(i = valores->begin(); i != valores->end();i++) std:: cout << "[" << i->first << "]: " << i->second << std::endl;
+}
+
+template <typename T1, typename T2>
+void countMultiElement(std::multimap<T1, T2>* valores)
+{
+    // conteo de las claves
+    T1 key;
+    std::cout << "Introduzca el valor a contar: ", std::cin >> key;
+
+    int counter = valores->count(key);
+    std::cout << "La clave " << key << " se repite: " << counter << " veces." << std::endl;
+    // lower_bound me va a devolver la primera vez que me aparezca la clave
+    // y lo va a tomar como iterador
+    // upper_bound me va a devolver la ultima coincidencia de la clave
+    std::multimap<char, std::string>::iterator i;
+    for (i = valores->lower_bound(key); i != valores->upper_bound(key); ++i)
+    {
+        // mostrando el valor de cada una de las coincidencias de la clave dada
+        std::cout << "[" << i->first << "]: " << i->second << std::endl;
+    }
+    std::cout << std::endl;
 }
