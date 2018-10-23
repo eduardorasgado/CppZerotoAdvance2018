@@ -17,7 +17,7 @@ struct Nodo
 
 void agregarPila(Nodo *&, int n);
 void sacarPila(Nodo *&, int &);
-void showElement();
+void showElement(Nodo *&);
 void showMenu();
 
 int main()
@@ -27,6 +27,9 @@ int main()
 	int n1;
 	// creando puntero de pila puntando a Nulo
 	Nodo *pila = NULL;
+	// creando un puntero a una copia del nodo principal
+	// para usarlo en la impresion en pantalla de la pila
+	Nodo *shower = NULL;
 
 	//ciclo del programa
 	for(;;)
@@ -53,14 +56,24 @@ int main()
 					//popear toda la pila
 					if(pila != NULL)
 					{
-						while(pila != NULL) sacarPila(pila, n1);
+						while(pila != NULL) sacarPila(pila, n1), std::cout << "Elemento: " << n1 << std::endl;
 						std::cout << "Se han eliminado todos los elementos" << std::endl;
 					}
 					else std::cout << "La pila esta vacía." << std::endl;
+					break;
 				case 4:
 					// mostrar
 					std::cout << "Mostrando los elementos de la pila: " << std::endl;
-					if(pila != NULL) while (pila != NULL) showElement();
+					if(pila != NULL)
+					{
+						// se hace una copia del nodo original para poder
+						// hacer el proceso de reasignacion de nodo en la funcion
+						// de mostrar elementos de la pila, con ello no perdemos
+						// el nodo actual de la pila
+						shower = pila;
+						showElement(shower);
+						//n1 = lastElement;
+					} 
 					else std::cout << "La pila esta vacia." << std::endl;
 					break;
 			}
@@ -84,7 +97,7 @@ void agregarPila(Nodo *&pila, int n)
 	nuevo_nodo->siguiente = pila;
 	// la pila sera el nuevo nodo, asignamos el nuevo nodo a pila
 	pila = nuevo_nodo;
-	std::cout << "Elemento " << n << "Agregado" << std::endl;
+	std::cout << "Elemento " << n << " agregado" << std::endl;
 }
 
 void sacarPila(Nodo *&pila, int &n)
@@ -98,14 +111,22 @@ void sacarPila(Nodo *&pila, int &n)
 	std::cout << "El valor ha sido eliminado de la pila" << std::endl;
 }
 
-void showElement()
+void showElement(Nodo *&pila)
 {
 	//
+	while(pila != NULL)
+	{
+		std::cout << pila->dato << " ";
+		// la pila ahora punta a su pila interna(el elemento anterior)
+		pila = pila->siguiente;
+	}
+	std::cout << std::endl;
 }
 
 void showMenu()
 {
-	std::cout << "1. agregar elemento a la pila." << std::endl;
+	// mostrando un menu hasta que el usuario deje de requerirlo
+	std::cout << "\n1. agregar elemento a la pila." << std::endl;
 	std::cout << "2. Popear elemento de la pila." << std::endl;
 	std::cout << "3. Popear total la pila." << std::endl;
 	std::cout << "4. Mostrar la pila." << std::endl;
