@@ -16,6 +16,7 @@ struct Node
 
 void insertElement(Node *&, int);
 void applyActions(Node *&, int&, char&, Node *&);
+void deleteElement(Node *&, char&);
 void showMenu();
 void showPile(Node *&);
 
@@ -36,11 +37,20 @@ int main()
 		std::cin >> option;
 		if(option == 4) break;
 		applyActions(pile, option, n, shower);
+		shower = NULL;
 	}
 
 	// desalojando la memoria usada
+	while(pile != NULL)
+	{
+		// iterando entre cada nodo creado dinamicamente
+		deleteElement(pile, n);
+	}
+	// eliminar el puntero nulo de hasta abajo
 	delete pile;
 	delete shower;
+
+	std::cout << "Programa terminado." << std::endl;
 
 	return 0;
 }
@@ -72,6 +82,8 @@ void applyActions(Node *&pile, int& option, char &n, Node *&shower)
 			break;
 		case 2:
 			//eliminar
+			if (pile != NULL) deleteElement(pile, n);
+			else std::cout << "No hay elementos por eliminar" << std::endl;
 			break;
 		case 3:
 			// mostrar
@@ -92,6 +104,17 @@ void showPile(Node *&shower)
 		shower = shower->next;
 	}
 	std::cout << std::endl;
+}
+
+void deleteElement(Node *&pile, char&value)
+{
+	// eliminar el ultimo elemento dentro de la pila
+	Node *aux = pile;
+	value = aux->value;
+	pile = aux->next;
+	//desalojar de la memoria el ultimo nodo
+	delete aux;
+	std::cout << "El valor " << value << " ha sido eliminado de la pila" << std::endl;
 }
 
 void showMenu()

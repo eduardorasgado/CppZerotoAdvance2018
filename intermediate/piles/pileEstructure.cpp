@@ -81,7 +81,13 @@ int main()
 		if(option == 5) break;
 	}
 
-	delete pila;	
+	// eliminar todos los objetos dinamicamente alojados para evitar
+	// fugas de memoria
+	while(pila != NULL) sacarPila(pila, n1), std::cout << "Elemento: " << n1 << std::endl;
+	std::cout << "Se han eliminado todos los elementos" << std::endl;
+	delete pila;
+	
+	delete shower;
 	
 	return 0;
 }
