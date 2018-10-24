@@ -69,6 +69,12 @@ int main()
 
 	//	*** fugas de memmoria
 	delete shower;
+	while(frente != NULL)
+	{
+		// eliminando todos los nodos internos de la cola antes de salir
+		eliminarElemento(frente, fin, n);
+	}
+	std::cout << "Programa finalizado." << std::endl;
 	delete frente;
 	delete fin;
 
