@@ -6,7 +6,7 @@ struct Telefonica
 {
 	std::string name;
 	int register_num;
-	double *someNumList;	
+	double *someNumList;
 };
 
 struct Phone
@@ -24,7 +24,7 @@ void init_telefonica(Phone&);
 int main()
 {
 	createPhone();
-	
+
 	return 0;
 }
 
@@ -34,6 +34,11 @@ void createPhone()
 	std::cout << "Creando un telefono" << std::endl;
 	Phone p1;
 	init_phone(p1);
+	for(int i = 0;i < 100;i++)
+	{
+		std::cout << p1.phone_vendor.someNumList[i] << " ";
+	}
+	std::cout << std::endl;
 }
 
 void init_phone(Phone& p)
