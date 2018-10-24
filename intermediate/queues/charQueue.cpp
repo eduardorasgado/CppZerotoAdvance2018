@@ -22,8 +22,6 @@ void takeActions(Node *&, Node *&, Node *&, char&, int&);
 void insertNode(Node *&, Node *&, char&);
 bool isEmpty(Node *);
 void deleteNode(Node *&, Node *&, char&);
-// para hacer una iteracion hasta que el nodo de en frente sea nulo
-void emptyQueue(Node *&, Node *&, char&);
 // solo toma como parametro la copia del nodo front
 void showQueue(Node *&);
 
@@ -97,6 +95,7 @@ void takeActions(Node *&front, Node *&end, Node *&shower, char&value, int&option
 			break;
 		case 3:
 			// Vaciar la cola
+			// para hacer una iteracion hasta que el nodo de en frente sea nulo
 			if(front != NULL)
 			{
 				while(front != NULL) deleteNode(front, end, value);
@@ -105,8 +104,12 @@ void takeActions(Node *&front, Node *&end, Node *&shower, char&value, int&option
 			break;
 		case 4:
 			// MOstrar la cola
+			// hacemos una copia del puntero frontal para no afectar al puntero original
+			shower = front;
+			if(shower==NULL) std::cout << "La cola está vacía." << std::endl;
+			else showQueue(shower);
 			break;
-		default: std::cout << "Opcion Invalida";
+		default: std::cout << "Opcion Invalida" << std::endl;
 	}
 }
 
@@ -148,14 +151,18 @@ void deleteNode(Node *&front, Node *&end, char& value)
 	std::cout << "El valor " << value << " ha sido eliminado" << std::endl;
 }
 
-// para hacer una iteracion hasta que el nodo de en frente sea nulo
-void emptyQueue(Node *&, Node *&, char&)
-{
-	//
-}
 
 // solo toma como parametro la copia del nodo front
-void showQueue(Node *&)
+void showQueue(Node *&shower)
 {
+	std::cout << "Mostrando la cola: " << std::endl;
 	//
+	while(shower != NULL)
+	{
+		// imprimir el valor almacenado en el nodo
+		std::cout << shower->value << " ";
+		// cambiamos al nodo interno
+		shower = shower->next_node;
+	}
+	std::cout << std::endl;
 }
