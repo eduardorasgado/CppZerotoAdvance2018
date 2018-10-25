@@ -9,6 +9,8 @@ constexpr T square(T value)
 	return value*value;
 }
 
+int count_x(char*, char&);
+
 int main()
 {
 	//
@@ -44,5 +46,25 @@ int main()
 
 	std::cout << std::endl;
 
+	// lets ocunt the name of x appears in a char array
+	// C style string
+	char charArray[] = {'a', 'b', 'c', 'b', 'b', 'd', 'f'};
+	// char to look for
+	char x = 'b';
+	auto times_x = count_x(charArray, x);
+	std::cout << "The times " << x << " appears is: " << times_x << std::endl;
+
 	return 0;
+}
+
+int count_x(char* p, char& x)
+{
+	//
+	if(p == nullptr) return 0;
+	//to accumulate times x appears
+	int count = 0;
+	// no need to initialize if we have just initialized p
+	for(;*p!=0;++p) if(*p==x) ++count;
+	// returning the values of x times in char p
+	return count;
 }
