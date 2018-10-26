@@ -14,6 +14,7 @@
 */
 #include <iostream>
 #include <cstdlib>
+#include <memory>
 
 struct Nodo
 {
@@ -31,6 +32,9 @@ template <typename T>
 void insertarElemento(Nodo*&,T&, int);
 
 void showList(Nodo *lista);
+
+
+void buscarElemento(Nodo*);
 
 int main()
 {
@@ -79,6 +83,8 @@ void takeActions(Nodo *& lista, T& valor, int option)
 			break;
 		case 3:
 			// busqueda
+			if(lista != NULL) buscarElemento(lista);
+			else std::cout << "La lista está vacía." << std::endl;
 			break;
 		case 4:
 			// eliminacion
@@ -140,5 +146,35 @@ void showList(Nodo *lista)
 		// el nodo actual va a ser ahora el nodo anterior
 		actual = actual->siguiente;
 	}
+	delete actual;
 	std::cout << std::endl;
+}
+
+
+void buscarElemento(Nodo* lista)
+{
+	// creando un elemento para buscar
+	int element;
+	std::cout << "Ingrese el elemento a buscar: ",std::cin >> element;
+
+	//auto *actual = std::make_shared<Nodo>;
+	auto *actual = new Nodo();
+	actual = lista;
+	// iterar en la lista para llevar a cabo la busqueda
+	int timesAppeared =0; // Un acumulador de las veces que element aparece en la lista
+	while(actual != NULL)
+	{
+		if(element == actual->dato)
+		{
+			// si se encuentra el elemento buscado
+			std::cout << "El elemento " << element << " ha sido encontrado" << std::endl;
+			timesAppeared++;
+		}
+		// vamos hacia un nodo anidado con anterioridad
+		actual = actual->siguiente;
+	}
+	std::cout << "El elemento " << element << " aparece " << timesAppeared << " veces en la lista" << std::endl;
+	// borrando el nodo, evitaremos fugas
+	delete actual;
+	// con make_shared no nos preocupamos de fugas de memoria
 }
