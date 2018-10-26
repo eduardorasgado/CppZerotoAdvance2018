@@ -30,6 +30,8 @@ void takeActions(Nodo*&, T&, int);
 template <typename T>
 void insertarElemento(Nodo*&,T&, int);
 
+void showList(Nodo *lista);
+
 int main()
 {
 	int option;
@@ -72,6 +74,8 @@ void takeActions(Nodo *& lista, T& valor, int option)
 			break;
 		case 2:
 			// mostrar
+			if(lista == NULL) std::cout << "La lista está vacía."<< std::endl;
+			else showList(lista);
 			break;
 		case 3:
 			// busqueda
@@ -120,8 +124,21 @@ void insertarElemento(Nodo *&lista, T& valor)
 	// se ejecuta si o si
 	nuevo_nodo->siguiente = aux1;
 
-	delete aux1;
-	delete aux2;
-
 	std::cout << "El elemento " << valor << " ha sido insertado en la lista." << std::endl;
+}
+
+void showList(Nodo *lista)
+{
+	std::cout << "----La lista es: ----" << std::endl;
+	// como no queremos modificar la lista, pasamos la llista como puntero
+	// creamos un nnuevo nodo llamado actual
+	Nodo *actual = new Nodo();
+	actual = lista;
+	while(actual != NULL)
+	{
+		std::cout << actual->dato << " ";
+		// el nodo actual va a ser ahora el nodo anterior
+		actual = actual->siguiente;
+	}
+	std::cout << std::endl;
 }
