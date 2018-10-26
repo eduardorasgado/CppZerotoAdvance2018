@@ -97,8 +97,31 @@ void insertarElemento(Nodo *&lista, T& valor)
 	Nodo *nuevo_nodo = new Nodo();
 	nuevo_nodo->dato = valor;
 
-	Nodo *aux1 = new Nodo();
-	Nodo *aux2 = new Nodo();
+	// creamos dos auxiliares
+	Nodo *aux1 = lista;
+	Nodo *aux2;
+
+	// mietras que la lista no hay llegado a su fin y
+	// si los elementos vienen en orden
+	while((aux1 != NULL)&&(aux1->dato < valor))
+	{
+		aux2 = aux1;
+		aux1 = aux1->siguiente;
+	}
+	// si el nodo va al principio
+	if(lista == aux1)
+	{
+		lista = nuevo_nodo;
+	}
+	else
+	{
+		aux2->siguiente = nuevo_nodo;
+	}
+	// se ejecuta si o si
+	nuevo_nodo->siguiente = aux1;
+
+	delete aux1;
+	delete aux2;
 
 	std::cout << "El elemento " << valor << " ha sido insertado en la lista." << std::endl;
 }
