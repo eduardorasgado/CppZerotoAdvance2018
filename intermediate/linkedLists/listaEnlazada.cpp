@@ -37,6 +37,8 @@ void buscarElemento(Nodo*);
 
 void eliminarElemento(Nodo *&);
 
+void vaciarLista(Nodo *&);
+
 int main()
 {
 	int option;
@@ -47,17 +49,14 @@ int main()
 	{
 		showMenu();
 		std::cin >> option;
-		if(option == 5) break;
+		if(option == 0) break;
 		takeActions(lista, n, option);
 	}
 
-	//while(lista != NULL)
-	//{
-		// eliminar primero los nodos internos de la lista
-	//	std::cout << "Se ha eliminado el nodo con el dato: "<< lista->dato << std::endl;
-	//	delete lista;
-	//	lista = lista->siguiente;
-	//}
+	// primero limpiamos la memoria antes de salir
+	vaciarLista(lista);
+
+	// eliminamos la misma lista
 	delete lista;
 	return 0;
 }
@@ -69,7 +68,8 @@ void showMenu()
 	std::cout << "2. Mostrar la lista enlazada" << std::endl;
 	std::cout << "3. Buscar un elemento en la lista enlazada" << std::endl;
 	std::cout << "4. Eliminar un elemento de la lista enlazada" << std::endl;
-	std::cout << "5. Salir." << std::endl;
+	std::cout << "5. Eliminar todos los elementos de la lista enlazada" << std::endl;
+	std::cout << "0. Salir." << std::endl;
 	std::cout << "Inserte su opción a elegir: " << std::endl;
 }
 
@@ -99,6 +99,13 @@ void takeActions(Nodo *& lista, T& valor, int option)
 			if(lista != NULL) eliminarElemento(lista);
 			else std::cout << "La lista está vacía" << std::endl;
 			break;
+		case 5:
+			// vaciar la lista
+			if(lista != NULL) vaciarLista(lista);
+			else std::cout << "La lista está vacía." << std::endl;
+			break;
+			
+		default: std::cout << "Opción inválida." << std::endl;
 	}
 }
 
@@ -222,5 +229,23 @@ void eliminarElemento(Nodo *&lista)
 		aux_anterior->siguiente = aux_borrar->siguiente;
 		delete aux_borrar;
 		std::cout << "El elemento ha sido eliminado: " << element << std::endl;
+	}
+}
+
+void vaciarLista(Nodo *&lista)
+{
+	// cramos un auxiliar
+	Nodo *aux = nullptr;
+	aux = lista;
+	while(lista != NULL)
+	{
+		// apuntamos el dato del puntero aux a el dato de la lista original
+		aux->dato = lista->dato;
+		std::cout << "Se ha eliminado el elemento " << aux->dato << std::endl;
+		// cambiamos el nodo al nodo anidado siguiente
+		lista = lista->siguiente;
+		// usando el puntero creado para ir a la ubicacion en memoria del dato
+		// vamos a poder borrar el dato que se queda atras al pasar al sigueinte nodo de la lista
+		delete aux;
 	}
 }
