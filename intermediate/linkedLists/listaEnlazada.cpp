@@ -33,8 +33,9 @@ void insertarElemento(Nodo*&,T&, int);
 
 void showList(Nodo *lista);
 
-
 void buscarElemento(Nodo*);
+
+void eliminarElemento(Nodo *&);
 
 int main()
 {
@@ -50,6 +51,13 @@ int main()
 		takeActions(lista, n, option);
 	}
 
+	//while(lista != NULL)
+	//{
+		// eliminar primero los nodos internos de la lista
+	//	std::cout << "Se ha eliminado el nodo con el dato: "<< lista->dato << std::endl;
+	//	delete lista;
+	//	lista = lista->siguiente;
+	//}
 	delete lista;
 	return 0;
 }
@@ -88,6 +96,8 @@ void takeActions(Nodo *& lista, T& valor, int option)
 			break;
 		case 4:
 			// eliminacion
+			if(lista != NULL) eliminarElemento(lista);
+			else std::cout << "La lista está vacía" << std::endl;
 			break;
 	}
 }
@@ -150,7 +160,7 @@ void showList(Nodo *lista)
 	std::cout << std::endl;
 }
 
-
+//template <typename T> 
 void buscarElemento(Nodo* lista)
 {
 	// creando un elemento para buscar
@@ -177,4 +187,40 @@ void buscarElemento(Nodo* lista)
 	// borrando el nodo, evitaremos fugas
 	delete actual;
 	// con make_shared no nos preocupamos de fugas de memoria
+}
+
+//template <typename T>
+void eliminarElemento(Nodo *&lista)
+{
+	// pedir al usuario el elemento a eliminar
+	int element;
+	std::cout << "Elemento a eliminar: ",  std::cin >> element;
+	
+	// creamos unos nodos auxiliares
+	Nodo *aux_borrar = nullptr;
+	Nodo *aux_anterior  = nullptr;
+
+	aux_borrar = lista;
+	while((aux_borrar != NULL)&& (aux_borrar->dato != element))
+	{
+		aux_anterior = aux_borrar;
+		// recorrer la lista en busca del numero a borrar
+		aux_borrar = aux_borrar->siguiente;
+	}
+	// Si no se encuentra nada
+	if(aux_borrar == NULL) std::cout << "No existe el elemento en la lista" << std::endl;
+	// en el caso en el que el elemento que queremos eliminar sea el primer elemento de la lista
+	else if(aux_anterior == NULL)
+	{
+		lista = lista->siguiente;
+		delete aux_borrar;
+	}
+	else
+	{
+		// borrar dato dentro de la lista real
+		//anterior apuntara a lo siguiente y el nodo siguuiente se va a eliminar
+		aux_anterior->siguiente = aux_borrar->siguiente;
+		delete aux_borrar;
+		std::cout << "El elemento ha sido eliminado: " << element << std::endl;
+	}
 }
