@@ -4,6 +4,7 @@
 #include <iostream>
 #include <memory>
 #include <initializer_list>
+#include <vector>
 
 // using initializer list in constructor
 class Dog
@@ -61,6 +62,34 @@ int main()
 
     std::cout << chato.getName() << std::endl;
     std::cout << mambo->getName() << std::endl;
+
+    // auto again
+    auto a = 56;
+    auto b = 9.56;
+    auto c = a;
+    auto d = 'a';
+
+    std::cout << a << ", " << b << ", " << c << ", " << d << std::endl;
+
+    // foreach =================================================
+    //creating the vector
+    std::vector<int> v = {1,2,3,4,5};
+    // C++03
+    for(std::vector<int>::iterator i = v.begin(); i != v.end(); ++i) std::cout << *i << " ";
+    std::cout << "\n";
+    // C++11
+    std::cout << "C11 foreach." << std::endl;
+    for(int i : v) // works on any class that has begin() and end()
+        std::cout << i << " "; // read only access
+    std::cout << "\n";
+
+    std::cout << "changing the v values" << std::endl;
+    for(int &i : v) // with reference
+        i++; // now we can access to i and it can be changed
+
+    for(int i : v) // lets show it again
+        std::cout << i << " "; //
+    std::cout << "\n";
 
     return 0;
 }
