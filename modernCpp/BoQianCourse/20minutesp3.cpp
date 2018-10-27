@@ -1,5 +1,5 @@
 /*
- * C++11 UNIFORM INITIALIZATION
+ * C++11 UNIFORM INITIALIZATION, AUTO, FOREACH
  * */
 #include <iostream>
 #include <memory>
@@ -79,15 +79,15 @@ int main()
     std::cout << "\n";
     // C++11
     std::cout << "C11 foreach." << std::endl;
-    for(int i : v) // works on any class that has begin() and end()
+    for(auto i : v) // works on any class that has begin() and end()
         std::cout << i << " "; // read only access
     std::cout << "\n";
 
     std::cout << "changing the v values" << std::endl;
-    for(int &i : v) // with reference
+    for(auto &i : v) // with reference
         i++; // now we can access to i and it can be changed
 
-    for(int i : v) // lets show it again
+    for(auto i : v) // lets show it again
         std::cout << i << " "; //
     std::cout << "\n";
 
