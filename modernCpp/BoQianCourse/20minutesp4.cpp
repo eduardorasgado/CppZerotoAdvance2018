@@ -1,5 +1,5 @@
 /*
- * C++11, 14 FEATURES
+ * C++11, 14 FEATURES: ENUM CLASS AND NULLPTR
  * */
 
 #include <iostream>
