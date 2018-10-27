@@ -22,12 +22,15 @@ class edVector
                 this->my_vector.push_back(*i);
         }
         // this is for be able to call a edVector.begin()
-        std::vector<int>::iterator begin()
+        // for use a template with the iterator we need to use keyword: typename
+        // This tells the compiler that vector<T>::iterator should be treated as a type,
+        // something it can't assume since iterator is dependent on what T is.
+        typename std::vector<T>::iterator begin()
         {
             return my_vector.begin();
         }
         // this is for be able to call a edVector.end()
-        std::vector<int>::iterator end()
+        typename std::vector<T>::iterator end()
         {
             return my_vector.end();
         }
