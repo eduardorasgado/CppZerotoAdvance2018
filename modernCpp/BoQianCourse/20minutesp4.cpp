@@ -21,6 +21,7 @@ int main()
 
     /*
      * ENUM CLASS =======================================
+     * https://www.programiz.com/cpp-programming/enumeration
      */
     // plain c++ 03 enum
 
