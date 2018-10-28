@@ -17,6 +17,7 @@ class Holiday
         Holiday() = default; // force the compiler
 
         // setting the names pased in a vector form
+        // const is kinda must
         void setNums(const std::initializer_list<T>& vect)
         {
             auto i = vect.begin();
@@ -25,6 +26,10 @@ class Holiday
             this->month = *i;
         }
         void setName(std::string n) { this->name = n; }
+
+        int getDay() { return this->day; }
+        int getMonth() { return this->month; }
+        std::string getName() { return this->name; }
 };
 // User defined types
 struct Date
@@ -80,5 +85,8 @@ void doingSomething(std::vector<T>* v, std::string)
     // so when this function finishes, we do not have to delete a pointer
     // because we are using a smart pointer
     christmas->setNums({v->at(0), v->at(1)});
+    christmas->setName("Christmas");
+
+    std::cout << "Holiday: " << christmas->getName() << ", day: " << christmas->getDay() << std::endl;
 
 }
