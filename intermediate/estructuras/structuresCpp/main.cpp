@@ -20,7 +20,9 @@ class Holiday
         // const is kinda must
         void setNums(const std::initializer_list<T>& vect)
         {
+            // an iterator to handle the values and iterate over vect
             auto i = vect.begin();
+            // destructure operator
             this->day = *i;
             i++;
             this->month = *i;
