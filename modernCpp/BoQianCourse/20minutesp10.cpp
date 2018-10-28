@@ -38,5 +38,10 @@ int main()
     filter([](int value){ return (value%2 == 0); }, v);
     std::cout << std::endl;
 
+    int y = 4;
+    filter([&](int x) { return (x > y); }, v);
+    // Note: [&] tells copiler that we want variable capture, so "y" enters into the lambda
+    std::cout << std::endl;
+
     return 0;
 }
