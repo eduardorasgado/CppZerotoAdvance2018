@@ -5,7 +5,7 @@
 
 int main() {
     // defining a string type array
-    std::string texts[] = { "one", "two", "three" };
+    std::string texts[] = { "one", "two", "three", "four", "five" };
 
     // size of the array
     std::cout <<"size of texts: " << sizeof(texts)/ sizeof(*texts) << std::endl;
@@ -21,11 +21,31 @@ int main() {
     space();
 
     // printing the array using pointers
-    for (int m = 0; m < sizeof(texts)/sizeof(std::string); ++m) {
-        std::cout << *(pText1+m) << " ";
-    }
+    // flush: Synchronizes the associated stream buffer with its controlled output sequence.
+    for (int m = 0; m < sizeof(texts)/sizeof(std::string); ++m) std::cout << *(pText1+m) << " " << std::flush;
     space();
 
+    // other way to use a pointer as value iterator in array
+    for (int m = 0; m < sizeof(texts)/sizeof(std::string); ++m, ++pText2) std::cout << *pText2 << " " << std::flush;
+    space();
+
+    // pointing to the last elemento of the array
+    auto *pEnd = &texts[sizeof(texts)/sizeof(*texts)-1];
+    //pointing to first element of the array
+    auto *pElement = &texts[0];
+
+    // Printing last element
+    std::cout << "Last element of the array: " << *pEnd << std::endl;
+
+    //
+    while(true)
+    {
+        std::cout << *pElement << " " << std::flush;
+        pElement++;
+        // if pointers point same address
+        if(pElement == pEnd) break;
+    }
+    space();
 
     // to remember arrays
     int matrix[3][4] = {{1,2,3,4},
