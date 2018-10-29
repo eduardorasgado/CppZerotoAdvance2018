@@ -37,7 +37,7 @@ int main() {
     // Printing last element
     std::cout << "Last element of the array: " << *pEnd << std::endl;
 
-    //
+    // lopping through array by comparing two pointers
     while(true)
     {
         std::cout << *pElement << " " << std::flush;
