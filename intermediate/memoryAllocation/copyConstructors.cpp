@@ -7,13 +7,16 @@ class Animal
     public:
         // common constructor
         Animal() { std::cout << "Animal created" << std::endl; }
-        // copy constructor
-        Animal(const Animal& other)
+
+        // copy constructor/ specifying what should be copied
+        Animal(const Animal& other): name{other.name}
         {
             std::cout << "Animal created by copying." << std::endl;
             // specifying what exactly should be copied
-            name = other.name;
+            // we can do it like this or even better by placing at function definition above
+            //name = other.name;
         }
+
         void setName(std::string name) { this->name = name; }
         void speak() const { std::cout << "My name is: " << this->name << std::endl; }
 };
@@ -37,5 +40,10 @@ int main()
     std::cout << "Animals talking: " << std::endl;
     animal1.speak();
     animal2.speak();
+
+    // another way to make the copy of the object
+    // using the copy constructor in a directly way
+    Animal animal3(animal1);
+    animal3.speak();
     return 0;
 }
