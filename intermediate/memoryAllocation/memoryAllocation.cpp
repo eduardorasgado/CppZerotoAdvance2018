@@ -73,7 +73,10 @@ int main() {
     char l = 'a';
     for (int i = 0; i < NANIMALS; ++i) {
         // assigning names: a, b, c, d ...
+        // get the control of the output with flush
         std::cout << l << " " << std::flush;
+        // casting the character to string ans passing char by reference
+        // to name the actual animal of the iteration
         (pAnimals+i)->setName(std::string(&l));
         l++;
     }
