@@ -7,17 +7,23 @@
 
 #include <iostream>
 
-class Cat
+namespace marsCat
 {
-    private:
-        //
-        std::string name;
-        int age;
-    public:
-        Cat(std::string, int);
-        ~Cat(); // Destructor
+    // constant can be accessed by marsCat:: stantandalone
+    const std::string CATWORLD = "MARS";
 
-        void speak();
-};
+    class Cat
+    {
+        private:
+            //
+            std::string name;
+            int age;
+        public:
+            Cat(std::string, int);
+            ~Cat(); // Destructor
+
+            void speak();
+    };
+}
 
 #endif //MEMORYALLOCATION_CAT_H

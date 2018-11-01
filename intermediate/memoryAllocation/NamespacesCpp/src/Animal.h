@@ -9,6 +9,9 @@
 
 namespace OtherAnimals
 {
+    // constant should be inside namespaces too
+    const std::string CATWORLD = "EARTH";
+
     class Cat
     {
         private:
