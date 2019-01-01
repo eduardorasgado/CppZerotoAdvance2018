@@ -4,7 +4,11 @@ using namespace std;
 
 int main()
 {
-    int arreglo[10];
+    int N;
+    std::cout << "Your size: ";
+    std::cin >> N;
+
+    int arreglo[N];
     // pointer to array
     int *p_arreglo = arreglo;
 
@@ -20,6 +24,7 @@ int main()
     {
         if(i == 0) { min = *p_arreglo; }
         else {
+            // getting minimum value inside the array
             if(*p_arreglo < min) { min = *p_arreglo; }
         }
         *p_arreglo++;
