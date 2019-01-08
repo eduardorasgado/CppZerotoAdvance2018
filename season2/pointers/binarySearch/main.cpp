@@ -73,6 +73,7 @@ int searchNum(int*arr, int&lower, int&upper, int&target)
     std::cout << "mid: " << std::to_string(middle) << ", lower: " <<
                  std::to_string(lower) << ", upper: " << std::to_string(upper) << "\n";
 
+    // in case number does not exist
     if(lower == middle || upper == middle) return -1;
     // number was found
     if(*(arr+middle) == target) return middle;
@@ -81,7 +82,6 @@ int searchNum(int*arr, int&lower, int&upper, int&target)
         if(target < *(arr+middle)) { return searchNum(arr, lower, middle, target); }
         // searching right of the middle
         if(target > *(arr+middle)) { return searchNum(arr, middle, upper, target); }
-        // in case number does not exist
     }
     return 0;
 }
