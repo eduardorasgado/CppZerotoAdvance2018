@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <cmath>
 
 void takeN(int&);
 void fillArray(int*, int&);
@@ -55,14 +56,32 @@ void searchLogic(int* arr, int&N)
     //
     int target;
     std::cout << "[SEACH A NUMBER IN ARRAY]\n";
+    std::cout << "Give me the number: ";
     std::cin >> target;
     int lower = 0;
     auto location = searchNum(arr, lower, N, target);
-    std::cout << "The location of number: " << *(arr+location) << ", is: " << location << "\n";
+    if(location == -1) { std::cout << "NUMBER NOT FOUND\n"; }
+    else {
+        std::cout << "The location of number: " << *(arr+location) << ", is: " << location << "\n";
+    }
 }
 
 int searchNum(int*arr, int&lower, int&upper, int&target)
 {
-    //
+    //binary search
+    int middle = round((upper - lower) / 2)+ lower;
+    std::cout << "mid: " << std::to_string(middle) << ", lower: " <<
+                 std::to_string(lower) << ", upper: " << std::to_string(upper) << "\n";
+
+    if(lower == middle || upper == middle) return -1;
+    // number was found
+    if(*(arr+middle) == target) return middle;
+    else{
+        // searching left of the middle
+        if(target < *(arr+middle)) { return searchNum(arr, lower, middle, target); }
+        // searching right of the middle
+        if(target > *(arr+middle)) { return searchNum(arr, middle, upper, target); }
+        // in case number does not exist
+    }
     return 0;
 }
