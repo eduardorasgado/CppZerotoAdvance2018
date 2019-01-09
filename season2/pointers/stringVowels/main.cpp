@@ -2,7 +2,7 @@
 #include <map>
 #include <memory>
 
-typedef std::map<std::string, int> charmap;
+typedef std::map<char, int> charmap;
 
 void takeName(std::string*);
 void printName(std::string*);
@@ -14,7 +14,13 @@ int main()
     takeName(name);
     printName(name);
 
-    countVowels(name);
+    auto vowels = countVowels(name);
+    for(auto v : *vowels)
+    {
+        std::cout << "vowel:" << v.first << ", count: " << v.second << "\n";
+    }
+
+    delete name;
     return 0;
 }
 
@@ -35,23 +41,29 @@ void printName(std::string* name)
 std::shared_ptr<charmap>countVowels(std::string* name)
 {
     //
+    std::cout << "Counting vowels.\n";
     auto vowels = std::make_shared<charmap>();
-    int s_size = static_cast<int>(name->size());
+    //int s_size = static_cast<int>(name->size());
 
-    for(auto v : {"A", "E", "I", "O", "U"})
+    char all_vowels[] = {'A', 'E', 'I', 'O', 'U'};
+
+    for(char v : all_vowels)
     {
-        //std::cout << v << " ";
+        // to count times actual vowel is repeated in string
+        int counter{0};
+        // counting in string
         for(char&letter : *name)
         {
-            //std::cout << letter << "|";
-            if(reinterpret_cast<char*>(letter) == v)
+            if(std::toupper(letter) == v)
             {
                 // converting to upper case and comparing to
                 // a vowel
-                std::cout << v << " ";
+                ++counter;
             }
         }
-        //std::cout << "\n";
+        // inserting the actual vowel and the final counter
+        vowels->insert(std::pair<char, int>(v, counter));
     }
+    return vowels;
 }
 
