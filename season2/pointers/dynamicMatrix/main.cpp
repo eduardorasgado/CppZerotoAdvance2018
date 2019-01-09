@@ -55,7 +55,8 @@ void fillMatrix(int**p_matrix, int&n_rows, int&n_columns)
     //
     for (int i = 0; i < n_rows; ++i) {
         for (int j = 0; j < n_columns; ++j) {
-            *(*(p_matrix+i)+j) = ((i+1)*(j+1));
+            std::cout << "matrix["+std::to_string(i)+"]["+std::to_string(j)+"]: ";
+            std::cin >> *(*(p_matrix+i)+j);
         }
     }
 }
