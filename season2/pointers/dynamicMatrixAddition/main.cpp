@@ -22,6 +22,13 @@ int main()
     matrixAddition(p_matrix1, p_matrix2, n_rows, n_columns);
 
     // deleting the matrices
+    for (int i = 0; i < n_rows; ++i) {
+        delete[] *(p_matrix1+i);
+        delete[] *(p_matrix2+i);
+    }
+    delete[] p_matrix1;
+    delete[] p_matrix2;
+
     return 0;
 }
 
