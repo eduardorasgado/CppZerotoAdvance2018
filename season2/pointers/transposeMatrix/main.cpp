@@ -25,7 +25,9 @@ int main()
 
     matrixTranspose(p_matrix, result_matrix, n_rows, n_columns);
 
+    std::cout << "Matrix is: \n";
     showMatrix(p_matrix, n_rows, n_columns);
+    std::cout << "Its transpose is:\n";
     showMatrix(result_matrix, n_columns, n_rows);
 
     // deleting pointers
@@ -87,4 +89,11 @@ void matrixTranspose(int**p_matrix, int**result_matrix, int&n_rows, int&n_column
 void showMatrix(int**p_matrix, int&n_rows, int&n_columns)
 {
     //
+    for (int i = 0; i < n_rows; ++i) {
+        std::cout << "[";
+        for (int j = 0; j < n_columns; ++j) {
+            std::cout << *(*(p_matrix+i)+j) << " ";
+        }
+        std::cout << "]\n";
+    }
 }
